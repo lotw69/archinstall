@@ -1,0 +1,7 @@
+Welcome to my Arch Install Script.  It is meant to be used after the regular archinstall from the ISO and selecting the minimal CLI only install.
+
+It adds various programs that I use and think that most people should use and allows you to select a Desktop Environment or Window Manager of your choice and pulls down the needed config files.
+
+It if free to modify, use, whatever.  I mainly made this for my personal use but others might find it better in some ways then the archinstall as it will do more things and set some things up.
+
+I do not take any responcibility for any things that could go wrong by using this script, it is a script and should be looked over before use.

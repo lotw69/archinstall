@@ -8,9 +8,11 @@
 # Mandatory software
 sudo pacman -S --needed --noconfirm dialog
 
-# Questions
+################################################################################
+### Questions                                                                ###
+################################################################################
 
-## Pick a AUR Helper
+# Pick a AUR Helper
 function AUR_HELPER() {
   clear
   echo "################################################################################"
@@ -30,10 +32,11 @@ function AUR_HELPER() {
   esac
 }
 
+################################################################################
+### Functions                                                                ###
+################################################################################
 
-# Functions
-
-## Install needed programs
+# Install needed programs
 function NEEDED_SOFTWARE() {
   sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop
   yay -S --noconfirm --needed cpufetch pfetch
@@ -63,3 +66,11 @@ function AUR_SELECTION() {
     sudo sed -i 's/#BottomUp/BottomUp/' /etc/paru.conf
   fi
 }
+
+################################################################################
+### Main Program                                                             ###
+################################################################################
+
+AUR_HELPER
+AUR_SELECTION
+NEEDED_SOFTWARE

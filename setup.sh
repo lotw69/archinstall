@@ -280,3 +280,6 @@ if [ {$BT_SUPPORT} = "yes" ]; then
 fi
 
 BASHRC_CONF
+
+# Temp config copy
+sudo cp /config/pacman.conf /etc/pacman.conf

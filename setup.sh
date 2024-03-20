@@ -256,7 +256,7 @@ function BTSI() {
   dialog --infobox "Installing Bluetooth Files." 3 33
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed bluez bluez-libs bluez-utils bluez-plugins - bluez-tools bluez-cups blueberry
+  sudo pacman -S --noconfirm --needed bluez bluez-libs bluez-utils bluez-tools bluez-cups blueberry
   sudo systemctl enable bluetooth.service
   sudo systemctl start bluetooh.service
 }

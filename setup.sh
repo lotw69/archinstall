@@ -112,7 +112,7 @@ function PRINTER_SUPPORT() {
 }
 
 # Bluetooth Support
-function BLUETOOTH_SUPPORT() {
+function B_SUPPORT() {
   clear
   echo "################################################################################"
   echo "### Do You Want Bluetooth Support?                                           ###"
@@ -252,7 +252,7 @@ function PRINTERSETUP() {
 }
 
 # Setting Up Bluetooth Support
-function BLUETOOTHSETUP() {
+function BTSETUP() {
   dialog --infobox "Installing Bluetooth Files." 3 31
   sleep 2
   clear
@@ -269,7 +269,7 @@ function BLUETOOTHSETUP() {
 AUR_HELPER
 SAMBA_SHARES
 PRINTER_SUPPORT
-BLUETOOTH_SUPPORT
+B_SUPPORT
 
 echo "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BT_SUPPORT
 sleep 60
@@ -284,7 +284,7 @@ if [ {$PSUPPORT} = "yes" ]; then
   PRINTERSETUP
 fi
 if [ {$BT_SUPPORT} = "yes" ]; then
-  BLUETOOTHSETUP
+  BTSETUP
 fi
 
 BASHRC_CONF

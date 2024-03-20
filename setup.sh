@@ -67,6 +67,50 @@ function AUR_SELECTION() {
   fi
 }
 
+# Addind some aliases to the BashRC file
+function BASHRC_CONF() {
+  dialog --infobox "Setting Up The BashRC Config File." 3 38
+  sleep 3
+  clear
+  echo " " >> ~/.bashrc
+  echo "# Check to see if neofetch is installed and if so display it" >> ~/.bashrc
+  echo "if [ -f /usr/bin/neofetch ]; then clear & neofetch; fi" >> ~/.bashrc
+  sed -i 's/alias/#alias'/g ~/.bashrc
+  echo "# Setting up some aliases" >> ~/.bashrc
+  echo "alias ls='lsd'" >> ~/.bashrc
+  echo "alias cat='bat'" >> ~/.bashrc
+  echo "alias fd='ncdu'" >> ~/.bashrc
+  echo "alias netsp='bwm-ng'" >> ~/.bashrc
+  echo "alias df='duf -hide special'" >> ~/.bashrc
+  echo "alias sysmon='gtop'" >> ~/.bashrc
+  echo "alias cpu='cpufetch'" >> ~/.bashrc
+  echo "alias info='clear&&neofetch'" >> ~/.bashrc
+  echo "alias info2='clear&&inxi -b'" >> ~/.bashrc
+  echo "alias dbl='distrobox-list'" >> ~/.bashrc
+  echo "alias dbe='clear && distrobox-enter'" >> ~/.bashrc
+  echo "alias dbc='clear && distrobox-create'" >> ~/.bashrc
+  echo "alias dbr='distrobox-rm'" >> ~/.bashrc
+  echo "alias dbs='distrobox-stop -Y'" >> ~/.bashrc
+  echo "alias dbu='distrobox-upgrade --all'" >> ~/.bashrc
+  echo "alias ar-ref='clear && sudo reflector --country US --latest 20 --sort rate --verbose --save /etc/pacman.d/mirrorlist'" >> ~/.bashrc
+  echo "alias db-up='clear && sudo apt update && sudo apt upgrade -y'" >> ~/.bashrc
+  echo "alias fd-up='clear && sudo dnf update -y'" >> ~/.bashrc
+  echo "alias fp-up='clear && flatpak update -y'" >> ~/.bashrc
+  echo "alias info3='clear && fastfetch'" >> ~/.bashrc
+  echo "alias info4='clear && pfetch'" >> ~/.bashrc
+  echo "alias info-full='clear && neofetch && duf --hide special'" >> ~/.bashrc
+  echo "alias sdh='sudo shutdown -h '" >> ~/.bashrc
+  echo "alias sdr='sudo shutdown -r '" >> ~/.bashrc
+  echo "alias compress='clear&&sudo btrfs filesystem defragment -c -r -v '" >> ~/.bashrc
+  if [ ${ZB} = "yay" ]; then
+    echo "alias ar-up='clear&&yay --noconfirm -Syu'" >> ~/.bashrc
+  fi
+  if [ ${ZB} = "paru" ]; then
+    echo "alias ar-up='clear&&paru --noconfirm -Syu'" >> ~/.bashrc
+  fi
+}
+
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################

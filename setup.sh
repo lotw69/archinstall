@@ -123,10 +123,10 @@ function B_SUPPORT() {
 
   case $case in
     1)
-    BT_SUPPORT="yes"
+    BTSUPPORT="yes"
     ;;
     2)
-    BT_SUPPORT="no"
+    BTSUPPORT="no"
     ;;
   esac
 }
@@ -271,7 +271,7 @@ SAMBA_SHARES
 PRINTER_SUPPORT
 B_SUPPORT
 
-echo "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BT_SUPPORT
+echo "AUR Helper"$ZB   "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BTSUPPORT
 sleep 60
 
 AUR_SELECTION
@@ -283,7 +283,7 @@ fi
 if [ {$PSUPPORT} = "yes" ]; then
   PRINTERSETUP
 fi
-if [ {$BT_SUPPORT} = "yes" ]; then
+if [ {$BTSUPPORT} = "yes" ]; then
   BTSETUP
 fi
 

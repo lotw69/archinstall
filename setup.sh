@@ -106,6 +106,26 @@ function PRINTER_SUPPORT() {
   esac
 }
 
+# Bluetooth Support
+function BLUETOOTH_SUPPORT() {
+  clear
+  echo "################################################################################"
+  echo "### Do You Want Bluetooth Support?                                           ###"
+  echo "### 1)  Yes                                                                  ###"
+  echo "### 2)  No                                                                   ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    BT_SUPPORT="yes"
+    ;;
+    2)
+    BT_SUPPORT="no"
+    ;;
+  esac
+}
+
 ################################################################################
 ### Functions                                                                ###
 ################################################################################
@@ -226,6 +246,17 @@ function PRINTERSETUP() {
   sudo systemctl enable cups.service
 }
 
+# Setting Up Bluetooth Support
+function BLUETOOTHSETUP() {
+  dialog --infobox "Installing Bluetooth Files." 3 31
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-plugins blueberry bluez-tools bluez-cups
+  sudo systemctl enable bluetooth.service
+  sudo systemctl start bluetooth.service
+  sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -233,6 +264,7 @@ function PRINTERSETUP() {
 AUR_HELPER
 SAMBA_SHARES
 PRINTER_SUPPORT
+BLUETOOTH_SUPPORT
 
 AUR_SELECTION
 NEEDED_SOFTWARE
@@ -242,6 +274,9 @@ if [ ${SAMBA_SH} = "yes" ]; then
 fi
 if [ {$PSUPPORT} = "yes" ]; then
   PRINTERSETUP
+fi
+if [ {$BT_SUPPORT} = "yes" ]; then
+  BLUETOOTHSETUP
 fi
 
 BASHRC_CONF

@@ -56,6 +56,56 @@ function SAMBA_SHARES() {
   esac
 }
 
+# Printer Support
+function PRINTER_SUPPORT() {
+  clear
+  echo "################################################################################"
+  echo "### Do You Want Printer Support?                                             ###"
+  echo "### 1)  Yes                                                                  ###"
+  echo "### 2)  No                                                                   ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    PSUPPORT="yes"
+    clear
+    echo "################################################################################"
+    echo "### Do You Want HP Printer Support?                                          ###"
+    echo "### 1)  Yes                                                                  ###"
+    echo "### 2)  No                                                                   ###"
+    echo "################################################################################"
+    read case;
+    case $case in
+      1)
+      HP_PRINT="yes"
+      ;;
+      2)
+      HP_PRINT="no"
+      ;;
+    esac
+    clear
+    echo "################################################################################"
+    echo "### Do You Want Epson Printer Support?                                       ###"
+    echo "### 1)  Yes                                                                  ###"
+    echo "### 2)  No                                                                   ###"
+    echo "################################################################################"
+    read case;
+    case $case in
+      1)
+      EP_PRINT="yes"
+      ;;
+      2)
+      EP_PRINT="no"
+      ;;
+    esac
+    ;;
+    2)
+    PSUPPORT="no"
+    ;;
+  esac
+}
+
 ################################################################################
 ### Functions                                                                ###
 ################################################################################
@@ -64,6 +114,7 @@ function SAMBA_SHARES() {
 function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
   sleep 2
+  clear
   sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox
   yay -S --noconfirm --needed cpufetch pfetch
 }
@@ -96,7 +147,7 @@ function AUR_SELECTION() {
 # Addind some aliases to the BashRC file
 function BASHRC_CONF() {
   dialog --infobox "Setting Up The BashRC Config File." 3 38
-  sleep 3
+  sleep 2
   clear
   echo " " >> ~/.bashrc
   sed -i 's/alias/#alias'/g ~/.bashrc
@@ -160,17 +211,37 @@ function SAMBA_INSTALL() {
   sudo gpasswd sambashare -a $(whoami)
 }
 
+# Setup Printing
+function PRINTERSETUP() {
+  dialog --infobox "Installing Printer Subsystem." 3 33
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed cups cups-pdf ghostscript gsfonts gutenprint gtk3-print-backends libcups system-config-printer foomatic-db foomatic-db-ppds foomatic-db-gutenprint-ppds foomatic-db-engine foomatic-db-nonfree foomatic-db-nonfree-ppds
+  if [ ${HP_PRINT} = "yes" ]; then
+    sudo pacman -S --noconfirm --needed hplip
+  fi
+  if [ ${EP_PRINT} = "yes" ]; then
+    $ZB -S --noconfirm --needed epson-inkjet-printer-escpr
+  fi
+  sudo systemctl enable cups.service
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
 
 AUR_HELPER
+SAMBA_SHARES
+PRINTER_SUPPORT
+
 AUR_SELECTION
 NEEDED_SOFTWARE
-SAMBA_SHARES
 
 if [ ${SAMBA_SH} = "yes" ]; then
   SAMBA_INSTALL
+fi
+if [ {$PSUPPORT} = "yes" ]; then
+  PRINTERSETUP
 fi
 
 BASHRC_CONF

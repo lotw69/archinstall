@@ -123,10 +123,10 @@ function BTS() {
 
   case $case in
     1)
-    BTSV="yes"
+    BTV="yes"
     ;;
     2)
-    BTSV="no"
+    BTV="no"
     ;;
   esac
 }
@@ -271,7 +271,7 @@ SAMBA_SHARES
 PRINTER_SUPPORT
 BTS
 
-echo "AUR Helper:"$ZB   "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BTSV
+echo "AUR Helper:"$ZB   "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BTV
 sleep 30
 
 AUR_SELECTION
@@ -280,10 +280,10 @@ NEEDED_SOFTWARE
 if [ ${SAMBA_SH} = "yes" ]; then
   SAMBA_INSTALL
 fi
-if [ {$PSUPPORT} = "yes" ]; then
+if [ ${PSUPPORT} = "yes" ]; then
   PRINTERSETUP
 fi
-if [ {$BTSV} = "yes" ]; then
+if [ ${BTV} = "yes" ]; then
   BTSI
 fi
 

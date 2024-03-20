@@ -9,7 +9,7 @@
 sudo pacman -S --needed --noconfirm dialog
 
 # Temp config copy
-sudo cp /config/pacman.conf /etc/pacman.conf
+sudo cp config/pacman.conf /etc/pacman.conf
 
 clear
 dialog --infobox "Welcome To Erik's Install Script." 3 38

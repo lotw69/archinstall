@@ -7,6 +7,10 @@
 
 # Mandatory software
 sudo pacman -S --needed --noconfirm dialog
+
+# Temp config copy
+sudo cp /config/pacman.conf /etc/pacman.conf
+
 clear
 dialog --infobox "Welcome To Erik's Install Script." 3 38
 sleep 3
@@ -280,6 +284,3 @@ if [ {$BT_SUPPORT} = "yes" ]; then
 fi
 
 BASHRC_CONF
-
-# Temp config copy
-sudo cp /config/pacman.conf /etc/pacman.conf

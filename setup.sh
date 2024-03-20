@@ -255,7 +255,7 @@ function BLUETOOTHSETUP() {
   dialog --infobox "Installing Bluetooth Files." 3 31
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-plugins blueberry bluez-tools bluez-cups
+  sudo pacman -S --noconfirm --needed bluez bluez-libs bluez-utils bluez-plugins blueberry bluez-tools bluez-cups
   sudo systemctl enable bluetooth.service
   sudo systemctl start bluetooth.service
   sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf

@@ -7,6 +7,10 @@
 
 # Mandatory software
 sudo pacman -S --needed --noconfirm dialog
+clear
+dialog --infobox "Welcome To Erik's Install Script." 3 38
+sleep 3
+
 
 ################################################################################
 ### Questions                                                                ###
@@ -38,7 +42,9 @@ function AUR_HELPER() {
 
 # Install needed programs
 function NEEDED_SOFTWARE() {
-  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop
+  dialog --infobox "Installing needed CLI based software." 3 38
+  sleep 2
+  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox
   yay -S --noconfirm --needed cpufetch pfetch
 }
 
@@ -73,8 +79,6 @@ function BASHRC_CONF() {
   sleep 3
   clear
   echo " " >> ~/.bashrc
-  echo "# Check to see if neofetch is installed and if so display it" >> ~/.bashrc
-  echo "if [ -f /usr/bin/neofetch ]; then clear & neofetch; fi" >> ~/.bashrc
   sed -i 's/alias/#alias'/g ~/.bashrc
   echo "# Setting up some aliases" >> ~/.bashrc
   echo "alias ls='lsd'" >> ~/.bashrc

@@ -112,7 +112,7 @@ function PRINTER_SUPPORT() {
 }
 
 # Bluetooth Support
-function B_SUPPORT() {
+function BTS() {
   clear
   echo "################################################################################"
   echo "### Do You Want Bluetooth Support?                                           ###"
@@ -123,10 +123,10 @@ function B_SUPPORT() {
 
   case $case in
     1)
-    BTSUPPORT="yes"
+    BTSV="yes"
     ;;
     2)
-    BTSUPPORT="no"
+    BTSV="no"
     ;;
   esac
 }
@@ -251,16 +251,16 @@ function PRINTERSETUP() {
   sudo systemctl enable cups.service
 }
 
-# Setting Up Bluetooth Support
-function BTSETUP() {
-  dialog --infobox "Installing Bluetooth Files." 3 31
+# Setting up Bluetooh Support
+function BTSI() {
+  dialog --infobox "Installing Bluetooth Files." 3 33
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed bluez bluez-libs bluez-utils bluez-plugins blueberry bluez-tools bluez-cups
+  sudo pacman -S --noconfirm --needed bluez bluez-libs bluez-utils bluez-plugins - bluez-tools bluez-cups blueberry
   sudo systemctl enable bluetooth.service
-  sudo systemctl start bluetooth.service
-  sudo sed -i 's/'#AutoEnable=false'/'AutoEnable=true'/g' /etc/bluetooth/main.conf
+  sudo systemctl start bluetooh.service
 }
+
 
 ################################################################################
 ### Main Program                                                             ###
@@ -269,10 +269,10 @@ function BTSETUP() {
 AUR_HELPER
 SAMBA_SHARES
 PRINTER_SUPPORT
-B_SUPPORT
+BTS
 
-echo "AUR Helper"$ZB   "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BTSUPPORT
-sleep 60
+echo "AUR Helper:"$ZB   "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BTSV
+sleep 30
 
 AUR_SELECTION
 NEEDED_SOFTWARE
@@ -283,8 +283,8 @@ fi
 if [ {$PSUPPORT} = "yes" ]; then
   PRINTERSETUP
 fi
-if [ {$BTSUPPORT} = "yes" ]; then
-  BTSETUP
+if [ {$BTSV} = "yes" ]; then
+  BTSI
 fi
 
 BASHRC_CONF

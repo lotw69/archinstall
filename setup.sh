@@ -10,6 +10,7 @@ sudo pacman -S --needed --noconfirm dialog
 
 # Temp config copy
 sudo cp config/pacman.conf /etc/pacman.conf
+sudo cp config/nanorc /etc/nanorc
 
 clear
 dialog --infobox "Welcome To Erik's Install Script." 3 38
@@ -270,7 +271,7 @@ SAMBA_SHARES
 PRINTER_SUPPORT
 BLUETOOTH_SUPPORT
 
-echo $SAMBA_SH  $PSUPPORT  $BT_SUPPORT
+echo "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BT_SUPPORT
 sleep 60
 
 AUR_SELECTION

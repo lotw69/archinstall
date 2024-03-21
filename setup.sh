@@ -131,6 +131,46 @@ function BTS() {
   esac
 }
 
+# Extra Sound Themes
+function SOUNDTHEME_SUPPORT() {
+  clear
+  echo "################################################################################"
+  echo "### Do You Want To Install Extra Sound Themes?                               ###"
+  echo "### 1)  Yes                                                                  ###"
+  echo "### 2)  No                                                                   ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    SND_THEME="yes"
+    ;;
+    2)
+    SND_THEME="no"
+    ;;
+  esac
+}
+
+# Extra System Fonts
+function EXTRA_FONTS() {
+  clear
+  echo "################################################################################"
+  echo "### Do You Want To Install Extra System Font?                                ###"
+  echo "### 1)  Yes                                                                  ###"
+  echo "### 2)  No                                                                   ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    EXFONTS="yes"
+    ;;
+    2)
+    EXFONTS="no"
+    ;;
+  esac
+}
+
 ################################################################################
 ### Functions                                                                ###
 ################################################################################
@@ -261,6 +301,23 @@ function BTSI() {
   sudo systemctl start bluetooh.service
 }
 
+# Install Sound Themes
+function INSTALL_SOUNDTHEME() {
+  dialog --infobox "Installing Some Sound Themes." 3 33
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed deepin-sound-theme
+  $ZB -S --noconfirm --needed sound-theme-smooth sound-theme-elementary-git
+}
+
+# Install Extra Fonts
+function INSTALL_EXTRAFONTS() {
+  dialog --infobox "Installing Some Extra System Fonts." 3 39
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex nerd-fonts
+  $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
+}
 
 ################################################################################
 ### Main Program                                                             ###
@@ -270,9 +327,7 @@ AUR_HELPER
 SAMBA_SHARES
 PRINTER_SUPPORT
 BTS
-
-echo "AUR Helper:"$ZB   "Samba:"$SAMBA_SH  "Printer:"$PSUPPORT "HP:"$HP_PRINT  "Epson:"$EP_PRINT  "Bluetooth:"$BTV
-sleep 30
+SOUNDTHEME_SUPPORT
 
 AUR_SELECTION
 NEEDED_SOFTWARE
@@ -280,11 +335,21 @@ NEEDED_SOFTWARE
 if [ ${SAMBA_SH} = "yes" ]; then
   SAMBA_INSTALL
 fi
+
 if [ ${PSUPPORT} = "yes" ]; then
   PRINTERSETUP
 fi
+
 if [ ${BTV} = "yes" ]; then
   BTSI
+fi
+
+if [ ${SND_THEME} = "yes" ]; then
+  INSTALL_SOUNDTHEME
+fi
+
+if [ ${EXFONTS} = "yes" ]; then
+  INSTALL_EXTRAFONTS
 fi
 
 BASHRC_CONF

@@ -180,6 +180,7 @@ function DEWM() {
   echo "### 01) Gnome                                                                ###"
   echo "### 02) Cinnamon                                                             ###"
   echo "### 03) LXQT                                                                 ###"
+  echo "### 04) MATE                                                                 ###"
   echo "################################################################################"
   read case;
 
@@ -192,6 +193,9 @@ function DEWM() {
     ;;
     03)
     DESKTOPENV="lxqt"
+    ;;
+    04)
+    DESKTOPENV="mate"
     ;;
     99)
     DESKTOPENV="none"
@@ -399,8 +403,18 @@ function LXQT_DE() {
   dialog --infobox "Installing The LQXT Desktop Environment" 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed lxqt gnome-disk-utility picom gnome-calculator gedit variety onboard ark file-roller unrar p7zip packagekit-qt5 breeze-icons breeze-gtk breeze sddm kitty kitty-terminfo kitty-shell-integration
+  sudo pacman -S --noconfirm --needed lxqt gnome-disk-utility picom gnome-calculator gedit variety onboard ark file-roller unrar p7zip packagekit-qt5 breeze-icons breeze-gtk breeze sddm
   sudo systemctl enable sddm
+}
+
+# MATE Desktop Install
+function MATE_DE() {
+  dialog --infobox "Installing The MATE Desktop Environment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed mate mate-extra gnome-disk-utility variety onboard ark file-roller unrar p7zip gdm
+  $ZB -S --noconfirm --needed mate-tweak brisk-menu mate-screensaver-hacks mugshot
+  sudo systemctl enable gdm
 }
 
 ################################################################################
@@ -449,6 +463,10 @@ fi
 
 if [ ${DESKTOPENV} = "lxqt" ]; then
   LXQT_DE
+fi
+
+if [ ${DESKTOPENV} = "mate" ]; then
+  MATE_DE
 fi
 
 BASHRC_CONF

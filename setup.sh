@@ -179,6 +179,7 @@ function DEWM() {
   echo "###--------------------------------------------------------------------------###"
   echo "### 01) Gnome                                                                ###"
   echo "### 02) Cinnamon                                                             ###"
+  echo "### 03) LXQT                                                                 ###"
   echo "################################################################################"
   read case;
 
@@ -188,6 +189,9 @@ function DEWM() {
     ;;
     02)
     DESKTOPENV="cinnamon"
+    ;;
+    03)
+    DESKTOPENV="lxqt"
     ;;
     99)
     DESKTOPENV="none"
@@ -365,7 +369,7 @@ function VC_INSTALL() {
 
 # Gnome Desktop Install
 function GNOME_DE() {
-  dialog --infobox "Installing The Gnome Desktop Enviroment." 3 40
+  dialog --infobox "Installing The Gnome Desktop Environment." 3 40
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share gnome-browser-connector
@@ -374,8 +378,8 @@ function GNOME_DE() {
 }
 
 # Cinnamon Desktop Install
-function CINNANON_DE () {
-  dialog --infobox "Installing The Cinnamon Desktop Environment." 3 48
+function CINNANON_DE() {
+  dialog --infobox "Installing The Cinnamon Desktop Environment." 3 40
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings cinnamon gnome-disk-utility gnome-system-monitor gnome-calculator gpicview gedit variety onboard ark file-roller unrar p7zip nemo-fileroller nemo-share kitty kitty-terminfo kitty-shell-integration
@@ -388,6 +392,15 @@ function CINNANON_DE () {
   gsettings set org.cinnamon.theme name 'Mint-Y-Aqua'
   gsettings set org.gnome.desktop.interface gtk-theme 'Mint-Y-Aqua'
   gsettings set org.gnome.desktop.interface icon-theme 'Mint-Y-Aqua'
+}
+
+# LXQT Desktop Install
+function LXQT_DE() {
+  dialog --infobox "Installing The LQXT Desktop Environment" 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed lxqt gnome-disk-utility picom gnome-calculator gedit variety onboard ark file-roller unrar p7zip packagekit-qt5 breeze-icons breeze-gtk breeze sddm kitty kitty-terminfo kitty-shell-integration
+  sudo systemctl enable sddm
 }
 
 ################################################################################
@@ -432,6 +445,10 @@ fi
 
 if [ ${DESKTOPENV} = "cinnamon" ]; then
   CINNANON_DE
+fi
+
+if [ ${DESKTOPENV} = "lxqt" ]; then
+  LXQT_DE
 fi
 
 BASHRC_CONF

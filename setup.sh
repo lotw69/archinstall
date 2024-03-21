@@ -171,6 +171,26 @@ function EXTRA_FONTS() {
   esac
 }
 
+# Desktop Enviroment/Window Manager Install
+function DEWM() {
+  clear
+  echo "################################################################################"
+  echo "### What Desktop Enviroment or Window Manager Do You Want To Install?        ###"
+  echo "###--------------------------------------------------------------------------###"
+  echo "### 1) Gnome                                                                 ###"
+  echo "###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    GNOME_DE
+    ;;
+    99)
+    ;;
+    esac
+  }
+
 ################################################################################
 ### Functions                                                                ###
 ################################################################################
@@ -315,8 +335,8 @@ function INSTALL_EXTRAFONTS() {
   dialog --infobox "Installing Some Extra System Fonts." 3 39
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family tamsyn-font awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex nerd-fonts
-  $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
+  sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex nerd-fonts terminus-font
+  $ZB -S --noconfirm --needed ttf-ms-fonts siji-git ttf-font-awesome apple-fonts
 }
 
 # Check What Video Card Installed
@@ -339,6 +359,14 @@ function VC_INSTALL() {
   fi
 }
 
+# Gnome Desktop Install
+function GNOME_DE() {
+  dialog --infobox "Installing The Gnome Desktop Enviroment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -349,6 +377,7 @@ PRINTER_SUPPORT
 BTS
 SOUNDTHEME_SUPPORT
 EXTRA_FONTS
+DEWM
 
 AUR_SELECTION
 NEEDED_SOFTWARE

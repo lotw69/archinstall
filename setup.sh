@@ -378,8 +378,9 @@ function CINNANON_DE () {
     dialog --infobox "Installing The Cinnamon Desktop Environment." 3 48
     sleep 2
     clear
-    sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings cinnamon gnome-disk-utility gnome-system-monitor gnome-calculator gpicview gedit variety onboard ark file-roller unrar p7zip nemo-fileroller nemo-share
+    sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings cinnamon gnome-disk-utility gnome-system-monitor gnome-calculator gpicview gedit variety onboard ark file-roller unrar p7zip nemo-fileroller nemo-share kitty kitty-terminfo kitty-shell-integration
     $ZB -S --noconfirm --needed gvfs-smb cinnamon-sounds mint-x-icon mint-themes mint-y-icons mint-artwork
+    sudo systemctl enable lightdm
 }
 
 ################################################################################

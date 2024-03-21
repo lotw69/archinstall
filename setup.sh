@@ -177,14 +177,17 @@ function DEWM() {
   echo "################################################################################"
   echo "### What Desktop Enviroment or Window Manager Do You Want To Install?        ###"
   echo "###--------------------------------------------------------------------------###"
-  echo "### 1) Gnome                                                                 ###"
-  echo "###"
+  echo "### 01) Gnome                                                                ###"
+  echo "### 02) Cinnamon                                                             ###"
   echo "################################################################################"
   read case;
 
   case $case in
-    1)
+    01)
     DESKTOPENV="gnome"
+    ;;
+    02)
+    DESKTOPENV="cinnamon"
     ;;
     99)
     DESKTOPENV="none"
@@ -370,6 +373,15 @@ function GNOME_DE() {
   sudo systemctl enable gdm
 }
 
+# Cinnamon Desktop Install
+function CINNANON_DE () {
+    dialog --infobox "Installing The Cinnamon Desktop Environment." 3 48
+    sleep 2
+    clear
+    sudo pacman -S --noconfirm --needed cinnamon gnome-disk-utility gnome-system-monitor gnome-calculator gpicview gedit variety onboard ark file-roller unrar p7zip nemo-fileroller nemo-share
+    $ZB -S --noconfirm --needed gvfs-smb cinnamon-sounds mint-x-icon mint-themes mint-y-icons mint-artwork
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -408,6 +420,10 @@ fi
 
 if [ ${DESKTOPENV} = "gnome" ]; then
   GNOME_DE
+fi
+
+if [ ${DESKTOPENV} = "cinnamon" ]; then
+  CINNANON_DE
 fi
 
 BASHRC_CONF

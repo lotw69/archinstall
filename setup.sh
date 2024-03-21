@@ -184,9 +184,10 @@ function DEWM() {
 
   case $case in
     1)
-    GNOME_DE
+    $DE="gnome"
     ;;
     99)
+    $DE="none"
     ;;
     esac
   }
@@ -327,7 +328,7 @@ function INSTALL_SOUNDTHEME() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed deepin-sound-theme
-  $ZB -S --noconfirm --needed sound-theme-smooth sound-theme-elementary-git
+  $ZB -S --noconfirm --needed sound-theme-smooth
 }
 
 # Install Extra Fonts
@@ -364,7 +365,9 @@ function GNOME_DE() {
   dialog --infobox "Installing The Gnome Desktop Enviroment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share
+  sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share gnome-browser-connector
+  $ZB -S --noconfirm --needed extension-manager
+  sudo systemctl enable gdm
 }
 
 ################################################################################
@@ -401,6 +404,10 @@ fi
 
 if [ ${EXFONTS} = "yes" ]; then
   INSTALL_EXTRAFONTS
+fi
+
+if [ ${DE} = "gnome" ]; then
+  GNOME_DE
 fi
 
 BASHRC_CONF

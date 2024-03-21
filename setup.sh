@@ -412,9 +412,9 @@ function MATE_DE() {
   dialog --infobox "Installing The MATE Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed mate mate-extra gnome-disk-utility variety onboard ark file-roller unrar p7zip gdm
+  sudo pacman -S --noconfirm --needed mate mate-extra gnome-disk-utility variety onboard ark file-roller unrar p7zip lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
   $ZB -S --noconfirm --needed mate-tweak brisk-menu mate-screensaver-hacks mugshot
-  sudo systemctl enable gdm
+  sudo systemctl enable lightdm
 }
 
 ################################################################################

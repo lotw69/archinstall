@@ -382,34 +382,32 @@ SOUNDTHEME_SUPPORT
 EXTRA_FONTS
 DEWM
 
-echo "Desktop Selected = "$DESKTOPENV
+AUR_SELECTION
+NEEDED_SOFTWARE
+VC_INSTALL
 
-#AUR_SELECTION
-#NEEDED_SOFTWARE
-#VC_INSTALL
+if [ ${SAMBA_SH} = "yes" ]; then
+  SAMBA_INSTALL
+fi
 
-#if [ ${SAMBA_SH} = "yes" ]; then
-#  SAMBA_INSTALL
-#fi
+if [ ${PSUPPORT} = "yes" ]; then
+  PRINTERSETUP
+fi
 
-#if [ ${PSUPPORT} = "yes" ]; then
-#  PRINTERSETUP
-#fi
+if [ ${BTV} = "yes" ]; then
+  BTSI
+fi
 
-#if [ ${BTV} = "yes" ]; then
-#  BTSI
-#fi
+if [ ${SND_THEME} = "yes" ]; then
+  INSTALL_SOUNDTHEME
+fi
 
-#if [ ${SND_THEME} = "yes" ]; then
-#  INSTALL_SOUNDTHEME
-#fi
+if [ ${EXFONTS} = "yes" ]; then
+  INSTALL_EXTRAFONTS
+fi
 
-#if [ ${EXFONTS} = "yes" ]; then
-#  INSTALL_EXTRAFONTS
-#fi
+if [ ${DESKTOPENV} = "gnome" ]; then
+  GNOME_DE
+fi
 
-#if [ ${DE} = "gnome" ]; then
-#  GNOME_DE
-#fi
-
-#BASHRC_CONF
+BASHRC_CONF

@@ -184,10 +184,10 @@ function DEWM() {
 
   case $case in
     1)
-    $DE="gnome"
+    $DESKTOPENV="gnome"
     ;;
     99)
-    $DE="none"
+    $DESKTOPENV="none"
     ;;
     esac
   }
@@ -382,32 +382,34 @@ SOUNDTHEME_SUPPORT
 EXTRA_FONTS
 DEWM
 
-AUR_SELECTION
-NEEDED_SOFTWARE
-VC_INSTALL
+echo "Desktop Selected = "$DESKTOPENV
 
-if [ ${SAMBA_SH} = "yes" ]; then
-  SAMBA_INSTALL
-fi
+#AUR_SELECTION
+#NEEDED_SOFTWARE
+#VC_INSTALL
 
-if [ ${PSUPPORT} = "yes" ]; then
-  PRINTERSETUP
-fi
+#if [ ${SAMBA_SH} = "yes" ]; then
+#  SAMBA_INSTALL
+#fi
 
-if [ ${BTV} = "yes" ]; then
-  BTSI
-fi
+#if [ ${PSUPPORT} = "yes" ]; then
+#  PRINTERSETUP
+#fi
 
-if [ ${SND_THEME} = "yes" ]; then
-  INSTALL_SOUNDTHEME
-fi
+#if [ ${BTV} = "yes" ]; then
+#  BTSI
+#fi
 
-if [ ${EXFONTS} = "yes" ]; then
-  INSTALL_EXTRAFONTS
-fi
+#if [ ${SND_THEME} = "yes" ]; then
+#  INSTALL_SOUNDTHEME
+#fi
 
-if [ ${DE} = "gnome" ]; then
-  GNOME_DE
-fi
+#if [ ${EXFONTS} = "yes" ]; then
+#  INSTALL_EXTRAFONTS
+#fi
 
-BASHRC_CONF
+#if [ ${DE} = "gnome" ]; then
+#  GNOME_DE
+#fi
+
+#BASHRC_CONF

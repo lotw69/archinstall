@@ -319,6 +319,26 @@ function INSTALL_EXTRAFONTS() {
   $ZB -S --noconfirm --needed ttf-ms-fonts ttf-mac-fonts siji-git ttf-font-awesome
 }
 
+# Check What Video Card Installed
+function VC_INSTALL() {
+  if [[ $(lspci -k | grep VGA | grep -i nvidia) ]]; then
+    dialog --infobox "Installing nVidia Video Drivers." 3 36
+    sleep 2
+    clear
+    sudo pacman -S --noconfirm --needed nvidia nvidia-cg-toolkit nvidia-settings nvidia-utils lib32-nvidia-cg-toolkit lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia cuda ffnvcodec-headers lib32-libvdpau libxnvctrl pycuda-headers python-pycuda
+    sudo pacman -R --noconfirm xf86-video-nouveau
+  fi
+
+  if [[ $(lspci -k | grep VGA | grep -i amd) ]]; then
+    dialog --infobox "Installing AMD Video Drivers." 3 33
+    sleep 2
+    clear
+    sudo pacman -S --noconfirm --needed opencl-mesa lib32-opencl-mesa vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver rocm-opencl-runtime rocm-hip-libraries rocm-hip-runtime
+    dialog --infobox "Thanks for supporting a free and open vendor." 3 49
+    sleep 2
+  fi
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################

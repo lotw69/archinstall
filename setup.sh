@@ -181,6 +181,7 @@ function DEWM() {
   echo "### 02) Cinnamon                                                             ###"
   echo "### 03) LXQT                                                                 ###"
   echo "### 04) MATE                                                                 ###"
+  echo "### 05) Budgie                                                               ###"
   echo "################################################################################"
   read case;
 
@@ -196,6 +197,9 @@ function DEWM() {
     ;;
     04)
     DESKTOPENV="mate"
+    ;;
+    05)
+    DESKTOPENV="budgie"
     ;;
     99)
     DESKTOPENV="none"
@@ -417,6 +421,15 @@ function MATE_DE() {
   sudo systemctl enable lightdm
 }
 
+# Budgie Desktop Install
+function BUDGIE_DE() {
+  dialog --infobox "Installing The Budgie Desktop Environment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks gdm
+  sudo systemctl enable gdm
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -467,6 +480,10 @@ fi
 
 if [ ${DESKTOPENV} = "mate" ]; then
   MATE_DE
+fi
+
+if [ ${DESKTOPENV} = "budgie" ]; then
+  BUDGIE_DE
 fi
 
 BASHRC_CONF

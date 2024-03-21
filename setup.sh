@@ -184,10 +184,10 @@ function DEWM() {
 
   case $case in
     1)
-    $DESKTOPENV="gnome"
+    DESKTOPENV="gnome"
     ;;
     99)
-    $DESKTOPENV="none"
+    DESKTOPENV="none"
     ;;
     esac
   }

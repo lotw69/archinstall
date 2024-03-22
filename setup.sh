@@ -426,7 +426,7 @@ function BUDGIE_DE() {
   dialog --infobox "Installing The Budgie Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
+  sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings kitty kitty-terminfo kitty-shell-integration
   sudo systemctl enable lightdm
 }
 

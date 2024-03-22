@@ -182,6 +182,7 @@ function DEWM() {
   echo "### 03) LXQT                                                                 ###"
   echo "### 04) MATE                                                                 ###"
   echo "### 05) Budgie                                                               ###"
+  echo "### 06) Cutefish                                                             ###"
   echo "################################################################################"
   read case;
 
@@ -200,6 +201,9 @@ function DEWM() {
     ;;
     05)
     DESKTOPENV="budgie"
+    ;;
+    06)
+    DESKTOPENV="cutefish"
     ;;
     99)
     DESKTOPENV="none"
@@ -430,6 +434,15 @@ function BUDGIE_DE() {
   sudo systemctl enable lightdm
 }
 
+# Cutefish Desktop Install
+function CUTEFISH_DE() {
+  dialog --infobox "Installing The Cutefish Desktop Environment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed cutefish variety onboard ark file-roller unrar p7zip gnome-disk-utility eog lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings kitty kitty-terminfo kitty-shell-integration
+  sudo systemctl enable lightdm
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -484,6 +497,10 @@ fi
 
 if [ ${DESKTOPENV} = "budgie" ]; then
   BUDGIE_DE
+fi
+
+if [ ${DESKTOPENV} = "cutefish" ]; then
+  CUTEFISH_DE
 fi
 
 BASHRC_CONF

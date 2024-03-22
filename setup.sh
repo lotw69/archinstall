@@ -184,6 +184,7 @@ function DEWM() {
   echo "### 05) Budgie                                                               ###"
   echo "### 06) Cutefish (currently buggy)                                           ###"
   echo "### 07) Deepin                                                               ###"
+  echo "### 08) XFCE                                                                 ###"
   echo "################################################################################"
   read case;
 
@@ -208,6 +209,9 @@ function DEWM() {
     ;;
     07)
     DESKTOPENV="deepin"
+    ;;
+    08)
+    DESKTOPENV="xfce"
     ;;
     99)
     DESKTOPENV="none"
@@ -456,6 +460,16 @@ function DEEPIN_DE() {
   sudo systemctl enable lightdm
 }
 
+# XFCE Desktop Install
+function XFCE_DE() {
+  dialog --infobox "Installing The XFCE Desktop Environment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed xfce4 xfce4-goodies gnome-disk-utility ark file-roller unrar p7zip alacarte gnome-calculator picom variety libnma networkmanager networkmanager-openconnect networkmanager-openvpn networkmanager-pptp nm-connection-editor network-manager-applet onboard lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
+  $ZB -S --noconfirm --needed xfce4-screensaver xfce4-panel-profiles-git mugshot solarized-dark-themes gtk-theme-glossyblack mcos-mjv-xfce-edition xfce4-theme-switcher xts-windows10-theme xts-macos-theme xts-dark-theme xts-arcolinux-theme xts-windowsxp-theme xts-windows-server-2003-theme
+  sudo systemctl enable lightdm
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -518,6 +532,10 @@ fi
 
 if [ ${DESKTOPENV} = "deepin" ]; then
   DEEPIN_DE
+fi
+
+if [ ${DESKTOPENV} = "xfce" ]; then
+  XFCE_DE
 fi
 
 BASHRC_CONF

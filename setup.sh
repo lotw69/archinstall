@@ -232,8 +232,9 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox xdg-user-dirs
+  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox
   $ZB -S --noconfirm --needed cpufetch pfetch
+  sudo pacman -S --noconfirm --needed xdg-user-dirs
   xdg-user-dirs-update
 }
 
@@ -398,7 +399,7 @@ function GNOME_DE() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share gnome-browser-connector
-  $ZB -S --noconfirm --needed extension-manager
+  $ZB -S --noconfirm --needed extension-manager adw-gtk3
   sudo systemctl enable gdm
 }
 

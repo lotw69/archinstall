@@ -439,7 +439,7 @@ function CUTEFISH_DE() {
   dialog --infobox "Installing The Cutefish Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed cutefish variety onboard ark file-roller unrar p7zip gnome-disk-utility eog lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings kitty kitty-terminfo kitty-shell-integration
+  sudo pacman -S --noconfirm --needed cutefish variety onboard ark file-roller unrar p7zip gnome-disk-utility eog lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
   sudo systemctl enable lightdm
 }
 

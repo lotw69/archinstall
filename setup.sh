@@ -185,6 +185,7 @@ function DEWM() {
   echo "### 06) Cutefish (currently buggy)                                           ###"
   echo "### 07) Deepin                                                               ###"
   echo "### 08) XFCE                                                                 ###"
+  echo "### 09) Plasma                                                               ###"
   echo "################################################################################"
   read case;
 
@@ -212,6 +213,9 @@ function DEWM() {
     ;;
     08)
     DESKTOPENV="xfce"
+    ;;
+    09)
+    DESKTOPENV="plasma"
     ;;
     99)
     DESKTOPENV="none"
@@ -471,6 +475,15 @@ function XFCE_DE() {
   sudo systemctl enable lightdm
 }
 
+# Plasma Desktop Install
+function PLASMA_DE() {
+  dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
+  sudo systemctl enable sddm
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -537,6 +550,10 @@ fi
 
 if [ ${DESKTOPENV} = "xfce" ]; then
   XFCE_DE
+fi
+
+if [ ${DESKTOPENV} = "plasma" ]; then
+  PLASMA_DE
 fi
 
 BASHRC_CONF

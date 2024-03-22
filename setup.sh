@@ -182,7 +182,8 @@ function DEWM() {
   echo "### 03) LXQT                                                                 ###"
   echo "### 04) MATE                                                                 ###"
   echo "### 05) Budgie                                                               ###"
-  echo "### 06) Cutefish                                                             ###"
+  echo "### 06) Cutefish (currently buggy)                                           ###"
+  echo "### 07) Deepin                                                               ###"
   echo "################################################################################"
   read case;
 
@@ -204,6 +205,9 @@ function DEWM() {
     ;;
     06)
     DESKTOPENV="cutefish"
+    ;;
+    07)
+    DESKTOPENV="deepin"
     ;;
     99)
     DESKTOPENV="none"
@@ -443,6 +447,15 @@ function CUTEFISH_DE() {
   sudo systemctl enable lightdm
 }
 
+# Deepin Desktop Install
+function DEEPIN_DE() {
+  dialog --infobox "Installing The Deepin Desktop Environment." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed deepin deepin-extra gnome-disk-utility ark file-roller unrar p7zip onboard deepin-kwin deepin-polkit-agent deepin-polkit-agent-ext-gnomekeyring packagekit-qt5 lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
+  sudo systemctl enable lightdm
+}
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -501,6 +514,10 @@ fi
 
 if [ ${DESKTOPENV} = "cutefish" ]; then
   CUTEFISH_DE
+fi
+
+if [ ${DESKTOPENV} = "deepin" ]; then
+  DEEPIN_DE
 fi
 
 BASHRC_CONF

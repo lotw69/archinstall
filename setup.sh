@@ -452,7 +452,7 @@ function DEEPIN_DE() {
   dialog --infobox "Installing The Deepin Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed deepin deepin-extra gnome-disk-utility ark file-roller unrar p7zip onboard lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
+  sudo pacman -S --noconfirm --needed deepin gnome-disk-utility ark file-roller unrar p7zip onboard deepin-voice-note deepin-terminal deepin-screensaver-pp deepin-screen-recorder deepin-printer deepin-picker deepin-music deepin-movie deepin-font-manager deepin-editor deepin-draw deepin-device-formatter deepin-compressor deepin-community-wallpapers deepin-clone deepin-clipboard deepin-camera deepin-calculator deepin-boot-maker deepin-album
   sudo systemctl enable lightdm
 }
 

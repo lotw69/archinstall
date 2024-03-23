@@ -579,4 +579,8 @@ if [ ${DESKTOPENV} = "plasma" ]; then
   PLASMA_DE
 fi
 
+if [ ${DESKTOPENV} = "i3" ]; then
+  i3_WM
+fi
+
 BASHRC_CONF

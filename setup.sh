@@ -186,6 +186,7 @@ function DEWM() {
   echo "### 07) Deepin                                                               ###"
   echo "### 08) XFCE                                                                 ###"
   echo "### 09) Plasma                                                               ###"
+  echo "### 10) i3                                                                   ###"
   echo "################################################################################"
   read case;
 
@@ -216,6 +217,9 @@ function DEWM() {
     ;;
     09)
     DESKTOPENV="plasma"
+    ;;
+    10)
+    DESKTOPENV="i3"
     ;;
     99)
     DESKTOPENV="none"
@@ -483,6 +487,24 @@ function PLASMA_DE() {
   clear
   sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
   sudo systemctl enable sddm
+}
+
+# i3 Window Manager Install
+function i3_WM() {
+  dialog --infobox "Installing The i3 Window Manager." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard ark file-roller unrar p7zip picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance polkit-gnome galculator dunst ristretto pavucontrol lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb
+  $ZB -S --noconfirm --needed mugshot i3exit pnmixer
+  #$ZB -S --noconfirm --needed betterlockscreen
+  mkdir -p ~/.config/dunst
+  cp /etc/dunst/dunstrc ~/.config/dunst/
+  mkdir -p ~/.config/i3
+  cp i3/config ~/.config/i3/config
+  mkdir -p ~/.config/i3/i3status
+  cp i3/i3status-config ~/.config/i3/i3status/config
+  sudo cp i3/picom.conf /etc/xdg/picom.conf
+  sudo systemctl enable lightdm
 }
 
 ################################################################################

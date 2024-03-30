@@ -501,10 +501,10 @@ function i3_WM() {
   mkdir -p ~/.config/dunst
   cp /etc/dunst/dunstrc ~/.config/dunst/
   mkdir -p ~/.config/i3
-#  cp i3/config ~/.config/i3/config
+  cp i3/config ~/.config/i3/config
   mkdir -p ~/.config/i3/i3status
-#  cp i3/i3status-config ~/.config/i3/i3status/config
-#  sudo cp i3/picom.conf /etc/xdg/picom.conf
+  cp i3/i3status-config ~/.config/i3/i3status/config
+  sudo cp i3/picom.conf /etc/xdg/picom.conf
   sudo systemctl enable lightdm
 }
 

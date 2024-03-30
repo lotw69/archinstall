@@ -504,6 +504,8 @@ function i3_WM() {
   cp i3/config ~/.config/i3/config
   mkdir -p ~/.config/i3/i3status
   cp i3/i3status-config ~/.config/i3/i3status/config
+  mkdir -p ~/.config/kitty
+  cp kitty/kitty.conf ~/.config/kitty/kitty.conf
   sudo cp i3/picom.conf /etc/xdg/picom.conf
   sudo systemctl enable lightdm
 }

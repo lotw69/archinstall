@@ -50,6 +50,13 @@ exec --no-startup-id nitrogen --random --set-zoom-fill
 #exec --no-startup-id betterlockscreen
 exec --no-startup-id dunst
 
+# Gaps & borders
+for_window [class="^.*"] border pixel 0
+for_window [class="(?i)mpv|(?i)vlc|(?i)lbry|(?i)firefox"] focus
+gaps inner 10
+gaps outer 10
+gaps top 10
+smart_borders on
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

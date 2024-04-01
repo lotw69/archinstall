@@ -526,8 +526,8 @@ function SWAY_WM() {
   mkdir -p ~/.config/waybar
   cp /etc/xdg/waybar/* ~/.config/waybar/
   mkdir -p ~/Pictures/shots
-  echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc
   sudo systemctl enable sddm
+  echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc
 }
 
 ################################################################################

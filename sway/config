@@ -18,7 +18,7 @@ set $term xfce4-terminal
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu
+set $menu wofi --show drun
 set $menu2 rofi -show run
 
 set $cl_high #009ddc

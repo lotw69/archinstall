@@ -188,6 +188,7 @@ function DEWM() {
   echo "### 08) XFCE                                                                 ###"
   echo "### 09) Plasma                                                               ###"
   echo "### 10) i3                                                                   ###"
+  echo "### 11) Sway                                                                 ###"
   echo "################################################################################"
   read case;
 
@@ -221,6 +222,9 @@ function DEWM() {
     ;;
     10)
     DESKTOPENV="i3"
+    ;;
+    11)
+    DESKTOPENV="sway"
     ;;
     99)
     DESKTOPENV="none"
@@ -600,6 +604,10 @@ fi
 
 if [ ${DESKTOPENV} = "i3" ]; then
   i3_WM
+fi
+
+if [ #{DESKTOPENV} = "sway" ]; then
+  SWAY_WM
 fi
 
 BASHRC_CONF

@@ -241,7 +241,7 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us
+  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man
   $ZB -S --noconfirm --needed cpufetch pfetch
   sudo pacman -S --noconfirm --needed xdg-user-dirs
   xdg-user-dirs-update

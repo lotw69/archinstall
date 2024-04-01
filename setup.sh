@@ -497,7 +497,6 @@ function i3_WM() {
   clear
   sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard ark file-roller unrar p7zip picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance polkit-gnome galculator dunst ristretto pavucontrol lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad
   $ZB -S --noconfirm --needed mugshot i3exit pnmixer
-  #$ZB -S --noconfirm --needed betterlockscreen
   mkdir -p ~/.config/dunst
   cp /etc/dunst/dunstrc ~/.config/dunst/
   mkdir -p ~/.config/i3
@@ -506,6 +505,24 @@ function i3_WM() {
   mkdir -p ~/.config/kitty
   cp kitty/kitty.conf ~/.config/kitty/kitty.conf
   sudo cp picom/picom.conf /etc/xdg/picom.conf
+  echo "alias conf='nano ~/.config/i3/config'" >> ~/.bashrc
+  echo "alias conf-bar='nano ~/.config/i3/i3status-config'" >> ~/.bashrc
+  sudo systemctl enable lightdm
+}
+
+# Sway Window Manager Install
+function SWAY_WM() {
+  dialog --infobox "Installing The Sway Window Manager." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar dmenu rofi nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad
+  $ZB -S --noconfirm --needed mugshot
+  mkdir -p ~/.config/sway
+  cp sway/config ~/.config/sway/config
+  mkdir -p ~/.config/waybar
+  cp /etc/xdg/waybar/* ~/.config/waybar/
+  mkdir -p ~/Pictures/shots
+  echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc
   sudo systemctl enable lightdm
 }
 

@@ -519,8 +519,8 @@ function SWAY_WM() {
   dialog --infobox "Installing The Sway Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator sddm gvfs-smb kitty mousepad wofi rofi-lbonn-wayland
-  $ZB -S --noconfirm --needed mugshot
+  sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator sddm gvfs-smb kitty mousepad wofi
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland
   mkdir -p ~/.config/sway
   cp sway/config ~/.config/sway/config
   mkdir -p ~/.config/waybar

@@ -189,6 +189,7 @@ function DEWM() {
   echo "### 09) Plasma                                                               ###"
   echo "### 10) i3                                                                   ###"
   echo "### 11) Sway                                                                 ###"
+  echo "### 12) Hyprland                                                             ###"
   echo "###                                                                          ###"
   echo "### 99) None                                                                 ###"
   echo "################################################################################"
@@ -227,6 +228,9 @@ function DEWM() {
     ;;
     11)
     DESKTOPENV="sway"
+    ;;
+    12)
+    DESKTOPENV="hyprland"
     ;;
     99)
     DESKTOPENV="none"
@@ -532,6 +536,17 @@ function SWAY_WM() {
   echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc
 }
 
+# Hyprland Window Manager Install
+function HYPRLAND_DE(){
+  dialog --infobox "Installing The Hyprland Window Manager." 3 40
+  sleep 2
+  clear
+  sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland
+  sudo systemctl enable sddm
+}
+
+
 ################################################################################
 ### Main Program                                                             ###
 ################################################################################
@@ -610,6 +625,10 @@ fi
 
 if [ ${DESKTOPENV} = "sway" ]; then
   SWAY_WM
+fi
+
+if [ ${DESKTOPENV} = "hyprland" ]; then
+  HYPRLAND_DE
 fi
 
 BASHRC_CONF

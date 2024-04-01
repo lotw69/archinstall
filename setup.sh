@@ -519,7 +519,7 @@ function SWAY_WM() {
   dialog --infobox "Installing The Sway Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar dmenu rofi nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad
+  sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator sddm gvfs-smb kitty mousepad wofi rofi-lbonn-wayland
   $ZB -S --noconfirm --needed mugshot
   mkdir -p ~/.config/sway
   cp sway/config ~/.config/sway/config
@@ -527,7 +527,7 @@ function SWAY_WM() {
   cp /etc/xdg/waybar/* ~/.config/waybar/
   mkdir -p ~/Pictures/shots
   echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc
-  sudo systemctl enable lightdm
+  sudo systemctl enable sddm
 }
 
 ################################################################################

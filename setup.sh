@@ -543,6 +543,8 @@ function HYPRLAND_DE(){
   clear
   sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm
   $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland
+  mkdir -p ~/.config/hypr
+  cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   sudo systemctl enable sddm
 }
 

@@ -606,7 +606,7 @@ if [ ${DESKTOPENV} = "i3" ]; then
   i3_WM
 fi
 
-if [ #{DESKTOPENV} = "sway" ]; then
+if [ ${DESKTOPENV} = "sway" ]; then
   SWAY_WM
 fi
 

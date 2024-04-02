@@ -331,6 +331,7 @@ function BASHRC_CONF() {
   fi
   if [ ${DESKTOPENV} = "hyprland" ]; then
     echo "alias conf='nano ~/.config/hypr/hyprland.conf'" >> ~/.bashrc
+    echo "alias conf-bar='nano ~/.config/waybar/config'" >> ~/.bashrc
   fi
   if [ ${DESKTOPENV} = "sway" ]; then
     echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc

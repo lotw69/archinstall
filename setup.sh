@@ -329,6 +329,9 @@ function BASHRC_CONF() {
   if [ ${ZB} = "paru" ]; then
     echo "alias ar-up='clear&&paru --noconfirm -Syu'" >> ~/.bashrc
   fi
+  if [ ${DESKTOPENV} = "hyprland" ]; then
+    echo "alias conf='nano ~/.config/hypr/hyprland.conf'" >> ~/.bashrc
+  fi
 }
 
 # -----------------------------------------------------------------------------------------------------------

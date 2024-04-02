@@ -5,10 +5,12 @@
 ## To be used after the archinstall basic                                     ##
 ################################################################################
 
+# -----------------------------------------------------------------------------------------------------------
 # Mandatory software
 sudo pacman -Sy
 sudo pacman -S --needed --noconfirm dialog
 
+# -----------------------------------------------------------------------------------------------------------
 # Temp config copy
 sudo cp config/pacman.conf /etc/pacman.conf
 sudo cp config/nanorc /etc/nanorc
@@ -22,6 +24,7 @@ sleep 3
 ### Questions                                                                ###
 ################################################################################
 
+# -----------------------------------------------------------------------------------------------------------
 # Pick a AUR Helper
 function AUR_HELPER() {
   clear
@@ -42,6 +45,7 @@ function AUR_HELPER() {
   esac
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Samba filesharing
 function SAMBA_SHARES() {
   clear
@@ -62,6 +66,7 @@ function SAMBA_SHARES() {
   esac
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Printer Support
 function PRINTER_SUPPORT() {
   clear
@@ -112,6 +117,7 @@ function PRINTER_SUPPORT() {
   esac
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Bluetooth Support
 function BTS() {
   clear
@@ -132,6 +138,7 @@ function BTS() {
   esac
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Extra Sound Themes
 function SOUNDTHEME_SUPPORT() {
   clear
@@ -152,6 +159,7 @@ function SOUNDTHEME_SUPPORT() {
   esac
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Extra System Fonts
 function EXTRA_FONTS() {
   clear
@@ -172,6 +180,7 @@ function EXTRA_FONTS() {
   esac
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Desktop Enviroment/Window Manager Install
 function DEWM() {
   clear
@@ -242,6 +251,7 @@ function DEWM() {
 ### Functions                                                                ###
 ################################################################################
 
+# -----------------------------------------------------------------------------------------------------------
 # Install needed programs
 function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
@@ -253,7 +263,8 @@ function NEEDED_SOFTWARE() {
   xdg-user-dirs-update
 }
 
-## Install AUR Helper
+# -----------------------------------------------------------------------------------------------------------
+# Install AUR Helper
 function AUR_SELECTION() {
   if [ ${ZB} = "yay" ]; then
     dialog --infobox "Installing The AUR Helper YAY." 3 34
@@ -278,6 +289,7 @@ function AUR_SELECTION() {
   fi
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Addind some aliases to the BashRC file
 function BASHRC_CONF() {
   dialog --infobox "Setting Up The BashRC Config File." 3 38
@@ -319,6 +331,7 @@ function BASHRC_CONF() {
   fi
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Samba Shares Installation
 function SAMBA_INSTALL() {
   dialog --infobox "Setting Up The Samba Shares." 3 32
@@ -345,6 +358,7 @@ function SAMBA_INSTALL() {
   sudo gpasswd sambashare -a $(whoami)
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Setup Printing
 function PRINTERSETUP() {
   dialog --infobox "Installing Printer Subsystem." 3 33
@@ -360,6 +374,7 @@ function PRINTERSETUP() {
   sudo systemctl enable cups.service
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Setting up Bluetooh Support
 function BTSI() {
   dialog --infobox "Installing Bluetooth Files." 3 33
@@ -370,6 +385,7 @@ function BTSI() {
   sudo systemctl start bluetooh.service
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Install Sound Themes
 function INSTALL_SOUNDTHEME() {
   dialog --infobox "Installing Some Sound Themes." 3 33
@@ -379,6 +395,7 @@ function INSTALL_SOUNDTHEME() {
   $ZB -S --noconfirm --needed sound-theme-smooth
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Install Extra Fonts
 function INSTALL_EXTRAFONTS() {
   dialog --infobox "Installing Some Extra System Fonts." 3 39
@@ -388,6 +405,7 @@ function INSTALL_EXTRAFONTS() {
   $ZB -S --noconfirm --needed ttf-ms-fonts siji-git ttf-font-awesome apple-fonts
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Check What Video Card Installed
 function VC_INSTALL() {
   if [[ $(lspci -k | grep VGA | grep -i nvidia) ]]; then
@@ -408,6 +426,7 @@ function VC_INSTALL() {
   fi
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Gnome Desktop Install
 function GNOME_DE() {
   dialog --infobox "Installing The Gnome Desktop Environment." 3 40
@@ -418,6 +437,7 @@ function GNOME_DE() {
   sudo systemctl enable gdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Cinnamon Desktop Install
 function CINNANON_DE() {
   dialog --infobox "Installing The Cinnamon Desktop Environment." 3 40
@@ -435,6 +455,7 @@ function CINNANON_DE() {
   gsettings set org.gnome.desktop.interface icon-theme 'Mint-Y-Aqua'
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # LXQT Desktop Install
 function LXQT_DE() {
   dialog --infobox "Installing The LQXT Desktop Environment" 3 40
@@ -444,6 +465,7 @@ function LXQT_DE() {
   sudo systemctl enable sddm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # MATE Desktop Install
 function MATE_DE() {
   dialog --infobox "Installing The MATE Desktop Environment." 3 40
@@ -454,6 +476,7 @@ function MATE_DE() {
   sudo systemctl enable lightdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Budgie Desktop Install
 function BUDGIE_DE() {
   dialog --infobox "Installing The Budgie Desktop Environment." 3 40
@@ -463,6 +486,7 @@ function BUDGIE_DE() {
   sudo systemctl enable lightdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Cutefish Desktop Install
 function CUTEFISH_DE() {
   dialog --infobox "Installing The Cutefish Desktop Environment." 3 40
@@ -472,6 +496,7 @@ function CUTEFISH_DE() {
   sudo systemctl enable lightdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Deepin Desktop Install
 function DEEPIN_DE() {
   dialog --infobox "Installing The Deepin Desktop Environment." 3 40
@@ -481,6 +506,7 @@ function DEEPIN_DE() {
   sudo systemctl enable lightdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # XFCE Desktop Install
 function XFCE_DE() {
   dialog --infobox "Installing The XFCE Desktop Environment." 3 40
@@ -491,6 +517,7 @@ function XFCE_DE() {
   sudo systemctl enable lightdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Plasma Desktop Install
 function PLASMA_DE() {
   dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 40
@@ -500,6 +527,7 @@ function PLASMA_DE() {
   sudo systemctl enable sddm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # i3 Window Manager Install
 function i3_WM() {
   dialog --infobox "Installing The i3 Window Manager." 3 40
@@ -520,13 +548,14 @@ function i3_WM() {
   sudo systemctl enable lightdm
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Sway Window Manager Install
 function SWAY_WM() {
   dialog --infobox "Installing The Sway Window Manager." 3 40
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator sddm gvfs-smb kitty mousepad wofi nwg-look kitty gwenview
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt6ct-kde qt5-ct-kde
   mkdir -p ~/.config/sway
   cp sway/config ~/.config/sway/config
   mkdir -p ~/.config/waybar
@@ -538,13 +567,14 @@ function SWAY_WM() {
   echo "alias conf='nano ~/.config/sway/config'" >> ~/.bashrc
 }
 
+# -----------------------------------------------------------------------------------------------------------
 # Hyprland Window Manager Install
 function HYPRLAND_DE(){
   dialog --infobox "Installing The Hyprland Window Manager." 3 40
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland waypaper
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   mkdir -p ~/.config/kitty

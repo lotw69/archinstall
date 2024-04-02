@@ -92,6 +92,9 @@ output Virtual-1 resolution 1280x800 position 1280,0
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+    # Misc Keybinds
+    bindsym $mod+e thunar
 #
 # Moving around:
 #
@@ -166,7 +169,7 @@ output Virtual-1 resolution 1280x800 position 1280,0
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+m layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen

@@ -89,6 +89,10 @@ bindsym $mod+Shift+d exec rofi -show run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# Custom Keys
+bindsym $mod+e exec thunar
+
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -125,7 +129,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+m layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle

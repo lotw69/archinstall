@@ -564,7 +564,7 @@ function SWAY_WM() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed sway swaybg swayidle swaylock waybar nitrogen onboard ark file-roller unrar p7zip xfce4-terminal thunar thunar-archive-plugin thunar-media-tags-plugin network-manager-applet xfce4-screenshooter papirus-icon-theme arandr gnome-disk-utility polkit-gnome grim feh eog galculator sddm gvfs-smb kitty mousepad wofi nwg-look kitty gwenview
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt6ct-kde qt5-ct-kde
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt6ct-kde qt5-ct-kde sddm-conf-git
   mkdir -p ~/.config/sway
   cp sway/config ~/.config/sway/config
   mkdir -p ~/.config/waybar
@@ -582,7 +582,7 @@ function HYPRLAND_DE(){
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview cool-retro-term pavucontrol
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   mkdir -p ~/.config/kitty

@@ -6,14 +6,22 @@ It if free to modify, use, whatever.  I mainly made this for my personal use but
 
 I do not take any responcibility for any things that could go wrong by using this script, it is a script and should be looked over before use.
 
-Added The Following Desktop Environments and Window Managers:
 
-01. Gnome
-02. Cinnamon
-03. LXQT
-04. MATE
-05. Budgie
-06. Cutefish (buggy)
-07. Deepin
-08. XFCE
-09. Plasma
+Here is a list of my Default Key Combos:
+
+Super + RETURN = Default Terminal (tiled)
+Super + SHIFT RETURN = Default Terminal (window)
+Super + CTRL RETURN = Cool Retro Terminal (full screen)
+Super + B = Default Web Browser
+Super + SHIFT B = Randomly Changes Wallpaper
+Super + CTRL B = Kills And Reloads Waybar
+Super + Q = Kills Active Program
+Super + F = Toggle Fullscreen Mode
+Super + SHIFT F = Toggle Floating Mode
+Super + M = Exit Hyprland
+Super + E = Default Filemanger
+Super + T = Default Text Editer
+Super + D = Menu
+Super + P = Pseudo
+Super + J = Toggle Split
+Super + PRINT = Screencapture

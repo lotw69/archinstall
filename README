@@ -6,6 +6,7 @@ It if free to modify, use, whatever.  I mainly made this for my personal use but
 
 I do not take any responcibility for any things that could go wrong by using this script, it is a script and should be looked over before use.
 
+For Waybar theme to work correctly, user must be added to "input" group.  (Might add to script later on)
 
 Here is a list of my Default Key Combos:
 
@@ -18,7 +19,7 @@ Super + CTRL B = Kills And Reloads Waybar
 Super + Q = Kills Active Program
 Super + F = Toggle Fullscreen Mode
 Super + SHIFT F = Toggle Floating Mode
-Super + M = Exit Hyprland
+Super + M = Exit Hyprland (wlogout)
 Super + E = Default Filemanger
 Super + T = Default Text Editer
 Super + D = Menu

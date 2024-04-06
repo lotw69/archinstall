@@ -3,40 +3,25 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
+    "width": 0, // Waybar width
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": [
-        "hyprland/window",
-    ],
+    "modules-left": [ "hyprland/window" ],
     "modules-center": [
-        "hyprland/workspaces",
-    ],
-    "modules-right": [
-        "custom/updates",
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
-        //"hyprland/language",
-        "clock",
-        "tray"
-    ],
+        "hyprland/workspaces" ],
+    "modules-right": [ "custom/updates", "idle_inhibitor", "pulseaudio", "network", "power-profiles-daemon", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "tray" ],
+
+
     // Modules configuration
     "hyprland/workspaces": {
-        "disable-scroll": false,
+        "active-only": false,
         "all-outputs": true,
-        "warp-on-scroll": true,
-        "format": "{name}: {icon}",
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "format": "{icon}",
+        "on-click": "activate",
         "format-icons": {
             "1": "",
             "2": "",
@@ -59,41 +44,12 @@
             "unlocked": ""
         }
     },
-    "hyprland/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -108,15 +64,19 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+        "format": " {:%T}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "{:%D}"
     },
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "󰻠 {usage}%",
+        "format-alt": "󰻠 {avg_frequency} GHz",
+        "interval": 5
     },
     "memory": {
-        "format": "{}% "
+        "format": "󰍛 {}%",
+        "format-alt": "󰍛 {used}/{total} GiB",
+        "interval": 5
     },
     "temperature": {
         //"thermal-zone": 2,

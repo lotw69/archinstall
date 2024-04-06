@@ -297,6 +297,7 @@ function BASHRC_CONF() {
   clear
   echo " " >> ~/.bashrc
   sed -i 's/alias/#alias'/g ~/.bashrc
+  echo "TERM=xterm-256color" >> ~/.bashrc
   echo "# Setting up some aliases" >> ~/.bashrc
   echo "alias ls='lsd'" >> ~/.bashrc
   echo "alias cat='bat'" >> ~/.bashrc

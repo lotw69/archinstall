@@ -7,10 +7,10 @@
     // "width": 1280, // Waybar width
     "spacing": 6, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": [ "hyprland/window" ],
+    "modules-left": [ "custom/appmenu", "hyprland/window" ],
     "modules-center": [
         "hyprland/workspaces" ],
-    "modules-right": [ "custom/updates", "idle_inhibitor", "pulseaudio", "network", "power-profiles-daemon", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "tray" ],
+    "modules-right": [ "custom/updates", "idle_inhibitor", "pulseaudio", "network", "power-profiles-daemon", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "tray", "custom/shutdown" ],
 
 
     // Modules configuration
@@ -173,5 +173,19 @@
         },
         "exec-if": "which waybar-module-pacman-updates",
         "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
-    }
+    },
+    "custom/appmenu": {
+        // START APPS LABEL
+        "format": " ",
+        // END APPS LABEL
+        "on-click": "sleep 0.2;rofi -show drun -replace -show-icons",
+        "tooltip": false
+    },
+    "custom/shutdown": {
+        // START APPS LABEL
+        "format": "",
+        // END APPS LABEL
+        "on-click": "sleep 0.2;wlogout",
+        "tooltip": false
+    },
 }

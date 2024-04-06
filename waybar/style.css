@@ -361,3 +361,21 @@ label:focus {
     border-radius: 15px;
     background-color: rgba(20, 70, 75, 0.8);
 }
+#custom-appmenu {
+    padding: 0 10px;
+    margin: 1px 1px 1px 1px;
+    background-color: rgba(50, 50, 50, 0.6);
+    border-color: rgba(255, 0, 0, 0.4);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+}
+#custom-shutdown {
+    padding: 0 10px;
+    margin: 1px 1px 1px 1px;
+    background-color: rgba(100, 0, 0, 0.6);
+    border-color: rgba(200, 200, 200, 0.4);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 15px;
+}

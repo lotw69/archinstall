@@ -414,7 +414,7 @@ function INSTALL_EXTRAFONTS() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex nerd-fonts terminus-font
-  $ZB -S --noconfirm --needed ttf-ms-fonts siji-git ttf-font-awesome apple-fonts
+  $ZB -S --noconfirm --needed ttf-ms-fonts siji-git apple-fonts
 }
 
 # -----------------------------------------------------------------------------------------------------------

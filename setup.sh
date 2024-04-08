@@ -465,6 +465,8 @@ function CINNANON_DE() {
   gsettings set org.cinnamon.theme name 'Mint-Y-Aqua'
   gsettings set org.gnome.desktop.interface gtk-theme 'Mint-Y-Aqua'
   gsettings set org.gnome.desktop.interface icon-theme 'Mint-Y-Aqua'
+  mkdir -p ~/.config/kitty
+  cp kitty/kitty.conf ~/.config/kitty/kitty.conf
 }
 
 # -----------------------------------------------------------------------------------------------------------
@@ -495,6 +497,8 @@ function BUDGIE_DE() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed budgie-desktop budgie-extras gnome-system-monitor nautilus gnome-disk-utility gnome-control-center gnome-backgrounds gnome-calculator gedit variety onboard ark file-roller unrar p7zip gnome-tweaks lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings kitty kitty-terminfo kitty-shell-integration
+  mkdir -p ~/.config/kitty
+  cp kitty/kitty.conf ~/.config/kitty/kitty.conf
   sudo systemctl enable lightdm
 }
 

@@ -257,7 +257,7 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper
+  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper bwm-ng
   $ZB -S --noconfirm --needed cpufetch pfetch
   sudo pacman -S --noconfirm --needed xdg-user-dirs
   xdg-user-dirs-update
@@ -582,8 +582,8 @@ function HYPRLAND_DE(){
   dialog --infobox "Installing The Hyprland Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview cool-retro-term pavucontrol okular grim polkit-gnome
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout
+  sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   mkdir -p ~/.config/kitty

@@ -10,7 +10,7 @@
     "modules-left": [ "custom/appmenu", "hyprland/window" ],
     "modules-center": [
         "hyprland/workspaces" ],
-    "modules-right": [ "custom/updates", "idle_inhibitor", "pulseaudio", "network", "power-profiles-daemon", "cpu", "memory", "temperature", "backlight", "keyboard-state", "hyprland/language", "battery", "battery#bat2", "clock", "tray", "custom/shutdown" ],
+    "modules-right": [ "custom/weather", "custom/updates", "idle_inhibitor", "pulseaudio", "network", "power-profiles-daemon", "cpu", "memory", "temperature", "backlight", "keyboard-state", "battery", "battery#bat2", "clock", "tray", "custom/shutdown" ],
 
 
     // Modules configuration
@@ -80,7 +80,7 @@
     },
     "temperature": {
         //"thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp3_input",
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
@@ -187,5 +187,12 @@
         // END APPS LABEL
         "on-click": "sleep 0.2;wlogout",
         "tooltip": false
+    },
+    "custom/weather": {
+        "format": "{} °",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": "wttrbar --fahrenheit",
+        "return-type": "json"
     },
 }

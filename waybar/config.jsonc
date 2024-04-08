@@ -167,12 +167,13 @@
     "custom/updates": {
         "format": "{} {icon}",
         "return-type": "json",
-        "format-icons": {
+            "format-icons": {
             "has-updates": "󱍷",
             "updated": "󰂪"
         },
         "exec-if": "which waybar-module-pacman-updates",
         "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300",
+        "on-click": "kitty $HOME/.config/waybar/scripts/update.sh"
     },
     "custom/appmenu": {
         // START APPS LABEL
@@ -191,7 +192,7 @@
     "custom/weather": {
         "format": "{} °",
         "tooltip": true,
-        "interval": 3600,
+        "interval": 1800,
         "exec": "wttrbar --fahrenheit",
         "return-type": "json"
     },

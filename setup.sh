@@ -1,4 +1,4 @@
-#!/bin/bash
+7#!/bin/bash
 
 ################################################################################
 ## Erik's Arch Install Script                                                 ##
@@ -446,6 +446,7 @@ function GNOME_DE() {
   clear
   sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share gnome-browser-connector
   $ZB -S --noconfirm --needed extension-manager adw-gtk3
+  gsettings set org.gnome.mutter check-alive-timeout 60000
   sudo systemctl enable gdm
 }
 

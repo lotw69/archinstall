@@ -258,7 +258,7 @@ function NEEDED_SOFTWARE() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper bwm-ng
-  $ZB -S --noconfirm --needed cpufetch pfetch
+  $ZB -S --noconfirm --needed cpufetch pfetch pacseek
   sudo pacman -S --noconfirm --needed xdg-user-dirs
   xdg-user-dirs-update
 }
@@ -414,7 +414,7 @@ function INSTALL_EXTRAFONTS() {
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed adobe-source-sans-pro-fonts cantarell-fonts noto-fonts terminus-font ttf-bitstream-vera ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-roboto ttf-ubuntu-font-family awesome-terminal-fonts ttf-font-awesome ttf-hack ttf-ibm-plex nerd-fonts terminus-font
-  $ZB -S --noconfirm --needed ttf-ms-fonts siji-git apple-fonts
+  $ZB -S --noconfirm --needed ttf-ms-fonts
 }
 
 # -----------------------------------------------------------------------------------------------------------
@@ -432,7 +432,7 @@ function VC_INSTALL() {
     dialog --infobox "Installing AMD Video Drivers." 3 33
     sleep 2
     clear
-    sudo pacman -S --noconfirm --needed opencl-mesa lib32-opencl-mesa vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver rocm-opencl-runtime rocm-hip-libraries rocm-hip-runtime
+    sudo pacman -S --noconfirm --needed vulkan-mesa-layers lib32-vulkan-mesa-layers mesa-vdpau lib32-mesa-vdpau intel-compute-runtime intel-graphics-compiler intel-opencl-clang vulkan-icd-loader lib32-vulkan-icd-loader vkd3d lib32-vkd3d vulkan-swrast vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver rocm-opencl-runtime rocm-hip-libraries rocm-hip-runtime
     dialog --infobox "Thanks for supporting a free and open vendor." 3 49
     sleep 2
   fi
@@ -588,7 +588,7 @@ function HYPRLAND_DE(){
   sleep 2
   clear
   sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar
+  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   mkdir -p ~/.config/kitty

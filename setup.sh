@@ -550,7 +550,7 @@ function i3_WM() {
   dialog --infobox "Installing The i3 Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard file-roller picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance-gtk3 polkit-gnome galculator dunst ristretto pavucontrol lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad kvantum simple-scan
+  sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard file-roller picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance-gtk3 polkit-gnome galculator dunst ristretto pavucontrol lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad kvantum simple-scan numlockx
   $ZB -S --noconfirm --needed mugshot i3exit pnmixer rofi-themes-collection-git
   mkdir -p ~/.config/dunst
   cp /etc/dunst/dunstrc ~/.config/dunst/

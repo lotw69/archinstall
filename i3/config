@@ -181,16 +181,16 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Assign workspaces
-assign [class="(?i)chromium|(?i)firefox|(?i)lbry"] $ws2
-assign [class="(?i)gimp|(?i)blender|(?i)freecad|(?i)darktable"] $ws3
+assign [class="(?i)chromium|(?i)firefox|(?i)Microsoft-edge"] $ws2
+assign [class="(?i)gimp|(?i)blender|(?i)freecad|(?i)darktable|(?i)draw.io|(?i)ghb|(?i)Inkscape|(?i)kdenlive|(?i)makemkv|(?i)krita|(?i)openshot|(?i)obs"] $ws3
 assign [class="(?i)steam|(?i)minecraft"] $ws4
-assign [class="(?i)telegram|(?i)skype"] $ws5
-assign [class="(?i)vlc|(?i)mpv"] $ws6
+assign [class="(?i)telegram|(?i)skype|(?i)discord"] $ws5
+assign [class="(?i)vlc|(?i)mpv|(?i)strawberry|(?i)jellyfin"] $ws6
 assign [class="(?i)clementine|(?i)Audacity"] $ws7
-assign [class="(?i)virt-man"] $ws8
+assign [class="(?i)virt-man|(?i)org.gnome.Boxes"] $ws8
 
 # enable floating mode for all XTerm windows
-for_window [class="(?i)Terminal|(?i)Virt-man|(?i)Galculator|(?i)flatseal|(?i)boxbuddy|(?i)makemkv"] floating enable
+for_window [class="(?i)Terminal|(?i)Virt-man|(?i)Galculator|(?i)flatseal|(?i)boxbuddy|(?i)makemkv|(?i)warehouse|(?i)gnome-disks|(?i)peazip|(?i)pupqui2|(?i)simple-scan|(?i)org.gnome.Boxes"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

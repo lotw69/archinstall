@@ -257,7 +257,7 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper bwm-ng
+  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi xorg-xhost fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper bwm-ng p7zip unrar plymouth
   $ZB -S --noconfirm --needed cpufetch pfetch pacseek
   sudo pacman -S --noconfirm --needed xdg-user-dirs
   xdg-user-dirs-update
@@ -550,8 +550,8 @@ function i3_WM() {
   dialog --infobox "Installing The i3 Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard ark file-roller unrar p7zip picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance polkit-gnome galculator dunst ristretto pavucontrol lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad
-  $ZB -S --noconfirm --needed mugshot i3exit pnmixer
+  sudo pacman -S --noconfirm --needed i3 gnome-disk-utility onboard ark file-roller picom dmenu rofi nitrogen feh thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman xfce4-terminal xfce4-screenshooter papirus-icon-theme network-manager-applet arandr scrot lxappearance polkit-gnome galculator dunst ristretto pavucontrol lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb kitty mousepad
+  $ZB -S --noconfirm --needed mugshot i3exit pnmixer rofi-themes-collection-git
   mkdir -p ~/.config/dunst
   cp /etc/dunst/dunstrc ~/.config/dunst/
   mkdir -p ~/.config/i3

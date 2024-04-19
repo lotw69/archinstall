@@ -190,7 +190,7 @@ assign [class="(?i)clementine|(?i)Audacity"] $ws7
 assign [class="(?i)virt-man|(?i)org.gnome.Boxes"] $ws8
 
 # enable floating mode for all XTerm windows
-for_window [class="(?i)Terminal|(?i)Virt-man|(?i)Galculator|(?i)flatseal|(?i)boxbuddy|(?i)makemkv|(?i)warehouse|(?i)gnome-disks|(?i)peazip|(?i)pupqui2|(?i)simple-scan|(?i)org.gnome.Boxes"] floating enable
+for_window [class="(?i)Terminal|(?i)Virt-man|(?i)Galculator|(?i)flatseal|(?i)boxbuddy|(?i)makemkv|(?i)warehouse|(?i)gnome-disks|(?i)peazip|(?i)ProtonUp-Qt|(?i)simple-scan|(?i)org.gnome.Boxes|(?i)ark|(?i)file-roller"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

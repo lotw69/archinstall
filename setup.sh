@@ -596,6 +596,7 @@ function HYPRLAND_DE(){
   mkdir -p ~/.config/waybar
   cp waybar/* ~/.config/waybar/
   mkdir -p ~/.config/waybar/scripts
+  chmod +x ~/.config/waybar/scripts/*.sh
   cp waybar/scripts/* ~/.config/waybar/scripts/
   mkdir -p ~/.config/dunst
   cp /etc/dunst/dunstrc ~/.config/dunst/

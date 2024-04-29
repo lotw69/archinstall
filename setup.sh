@@ -533,6 +533,8 @@ function XFCE_DE() {
   $ZB -S --noconfirm --needed xfce4-screensaver xfce4-panel-profiles-git mugshot xfce4-theme-switcher
   sudo mkdir -p /usr/share/xfce4-theme-switcher/themes
   $ZB -S --noconfirm --needed xts-windows10-theme xts-dark-theme xts-arcolinux-theme xts-windowsxp-theme xts-windows-server-2003-theme xts-windows95-theme # xts-macos-sierra-theme xts-macos-yosemite-theme xts-macos-big-sur-theme mcos-mjv-xfce-edition (currently osx version broken)
+  cp kitty/kitty.conf ~/.config/kitty/kitty.conf
+  sudo cp picom/picom.conf /etc/xdg/picom.conf
   sudo systemctl enable lightdm
 }
 

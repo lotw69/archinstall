@@ -595,6 +595,7 @@ function HYPRLAND_DE(){
   $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
+  cp hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf
   mkdir -p ~/.config/kitty
   cp kitty/kitty.conf ~/.config/kitty/kitty.conf
   mkdir -p ~/.config/waybar
@@ -604,6 +605,8 @@ function HYPRLAND_DE(){
   cp waybar/scripts/* ~/.config/waybar/scripts/
   mkdir -p ~/.config/dunst
   cp /etc/dunst/dunstrc ~/.config/dunst/
+  mkdir -p ~/.config/wlogout
+  cp wlogout/* ~/.config/wlogout/
   sudo systemctl enable sddm
 }
 

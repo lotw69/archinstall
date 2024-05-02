@@ -306,8 +306,8 @@ function BASHRC_CONF() {
   echo "alias df='duf -hide special'" >> ~/.bashrc
   echo "alias sysmon='gtop'" >> ~/.bashrc
   echo "alias cpu='cpufetch'" >> ~/.bashrc
-  echo "alias info='clear&&neofetch'" >> ~/.bashrc
-  echo "alias info2='clear&&inxi -b'" >> ~/.bashrc
+  echo "alias info='clear && fastfetch'" >> ~/.bashrc
+  echo "alias info2='clear && inxi -b'" >> ~/.bashrc
   echo "alias dbl='distrobox-list'" >> ~/.bashrc
   echo "alias dbe='clear && distrobox-enter'" >> ~/.bashrc
   echo "alias dbc='clear && distrobox-create'" >> ~/.bashrc
@@ -318,7 +318,6 @@ function BASHRC_CONF() {
   echo "alias db-up='clear && sudo apt update && sudo apt upgrade -y'" >> ~/.bashrc
   echo "alias fd-up='clear && sudo dnf update -y'" >> ~/.bashrc
   echo "alias fp-up='clear && flatpak update -y'" >> ~/.bashrc
-  echo "alias info3='clear && fastfetch'" >> ~/.bashrc
   echo "alias info4='clear && pfetch'" >> ~/.bashrc
   echo "alias info-full='clear && neofetch && duf --hide special'" >> ~/.bashrc
   echo "alias sdh='sudo shutdown -h '" >> ~/.bashrc

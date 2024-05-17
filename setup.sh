@@ -308,7 +308,7 @@ function BASHRC_CONF() {
   echo "alias df='duf -hide special'" >> ~/.bashrc
   echo "alias sysmon='gtop'" >> ~/.bashrc
   echo "alias cpu='cpufetch'" >> ~/.bashrc
-  echo "alias info='clear && fastfetch'" >> ~/.bashrc
+  echo "alias info='clear && fastfetch -c paleofetch'" >> ~/.bashrc
   echo "alias info2='clear && inxi -b'" >> ~/.bashrc
   echo "alias dbl='distrobox-list'" >> ~/.bashrc
   echo "alias dbe='clear && distrobox-enter'" >> ~/.bashrc

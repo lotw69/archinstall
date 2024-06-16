@@ -320,8 +320,9 @@ function BASHRC_CONF() {
   echo "alias db-up='clear && sudo apt update && sudo apt upgrade -y'" >> ~/.bashrc
   echo "alias fd-up='clear && sudo dnf update -y'" >> ~/.bashrc
   echo "alias fp-up='clear && flatpak update -y'" >> ~/.bashrc
-  echo "alias info3='clear && neofetch'" >> ~/.bashrc
+  echo "alias info3='clear && fastfetch'" >> ~/.bashrc
   echo "alias info4='clear && pfetch'" >> ~/.bashrc
+  echo "alias info5='clear && neofetch'" >> ~/.bashrc
   echo "alias info-full='clear && fastfetch -c all'" >> ~/.bashrc
   echo "alias sdh='sudo shutdown -h '" >> ~/.bashrc
   echo "alias sdr='sudo shutdown -r '" >> ~/.bashrc

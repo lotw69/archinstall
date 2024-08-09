@@ -672,10 +672,10 @@ BTS
 SOUNDTHEME_SUPPORT
 EXTRA_FONTS
 DEWM
-if [ ${DESKTOP_ENV} = "gnome" ]; then
+if [ ${DESKTOPENV} = "gnome" ]; then
   GNOME_EXTRA  
 fi
-if [ ${DESKTOP_ENV} = "plasma" ]; then
+if [ ${DESKTOPENV} = "plasma" ]; then
   PLASMA_EXTRA
 fi
 

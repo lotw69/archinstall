@@ -255,7 +255,9 @@ function GNOME_EXTRA () {
     echo "### 1)  Yes                                                                  ###"
     echo "### 2)  No                                                                   ###"
     echo "################################################################################"
-    read case; 
+    read case;
+    
+    case $case in
     1)
     GNOME_EX="yes"
     ;;
@@ -272,7 +274,9 @@ function PLASMA_EXTRA () {
     echo "### 1)  Yes                                                                  ###"
     echo "### 2)  No                                                                   ###"
     echo "################################################################################"
-    read case; 
+    read case;
+    
+    case $case in
     1)
     PLASMA_EX="yes"
     ;;

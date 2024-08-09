@@ -248,6 +248,41 @@ function DEWM() {
     ;;
     esac
   }
+function GNOME_EXTRA () {
+    clear
+    echo "################################################################################"
+    echo "### Do You Want To Install Gnome Extras?                                     ###"
+    echo "### 1)  Yes                                                                  ###"
+    echo "### 2)  No                                                                   ###"
+    echo "################################################################################"
+    read case; 
+    1)
+    GNOME_EX="yes"
+    ;;
+    2)
+    GNOME_EX="no"
+    ;;
+    esac
+}
+
+function PLASMA_EXTRA () {
+    clear
+    echo "################################################################################"
+    echo "### Do You Want To Install KDE Plasma Applications?                          ###"
+    echo "### 1)  Yes                                                                  ###"
+    echo "### 2)  No                                                                   ###"
+    echo "################################################################################"
+    read case; 
+    1)
+    PLASMA_EX="yes"
+    ;;
+    2)
+    PLASMA_EX="no"
+    ;;
+    esac
+}
+
+
 
 ################################################################################
 ### Functions                                                                ###
@@ -447,9 +482,12 @@ function GNOME_DE() {
   dialog --infobox "Installing The Gnome Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share gnome-browser-connector
+  sudo pacman -S --noconfirm --needed gnome nautilus-share gnome-browser-connector
   $ZB -S --noconfirm --needed extension-manager adw-gtk3
   gsettings set org.gnome.mutter check-alive-timeout 60000
+  if [ ${GNOME_EX} = "yes" ]; then
+    sudo pacman -S --noconfirm --needed gnome-extra
+  fi 
   sudo systemctl enable gdm
 }
 
@@ -547,7 +585,10 @@ function PLASMA_DE() {
   dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
+  sudo pacman -S --noconfirm --needed plasma gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
+  if [ ${PLASMA_EX} = "yes" ]; then
+    sudo pacman -S --noconfirm --needed kde-applications
+  fi
   sudo systemctl enable sddm
 }
 
@@ -627,6 +668,12 @@ BTS
 SOUNDTHEME_SUPPORT
 EXTRA_FONTS
 DEWM
+if [ ${DESKTOP_ENV} = "gnome" ]; then
+  GNOME_EXTRA  
+fi
+if [ ${DESKTOP_ENV} = "plasma" ]; then
+  PLASMA_EXTRA
+fi
 
 AUR_SELECTION
 NEEDED_SOFTWARE

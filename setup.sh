@@ -612,7 +612,6 @@ function HYPRLAND_DE(){
   mkdir -p ~/.config/wlogout
   cp wlogout/* ~/.config/wlogout/
   mkdir -p ~/Pictures/Screenshots
-  XDG_MENU_PREFIX=arch- kbuildsycoca6
   sudo systemctl enable sddm
 }
 

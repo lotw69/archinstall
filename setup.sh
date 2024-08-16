@@ -594,8 +594,8 @@ function HYPRLAND_DE(){
   dialog --infobox "Installing The Hyprland Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk dunst thunar thunar-archive-plugin
-  $ZB -S --noconfirm --needed mugshot rofi-lbonn-wayland qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git hyprshot
+  sudo pacman -S --noconfirm --needed hyprland hypridle xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look kservice5 kdbusaddons5 kfilemetadata5 kconfig5 kcoreaddons5 gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk dunst thunar thunar-archive-plugin rofi-wayland
+  $ZB -S --noconfirm --needed mugshot qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git hyprshot
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   cp hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf

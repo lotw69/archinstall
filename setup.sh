@@ -447,10 +447,13 @@ function GNOME_DE() {
   dialog --infobox "Installing The Gnome Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed gnome gnome-extra nautilus-share gnome-browser-connector
+  sudo pacman -S --noconfirm --needed gnome nautilus-share gnome-browser-connector
   $ZB -S --noconfirm --needed extension-manager adw-gtk3
   gsettings set org.gnome.mutter check-alive-timeout 60000
   sudo systemctl enable gdm
+  if [ ${GNONE_EXTRA} = "yes" ]; then
+  sudo pacman -S gnome-extra
+  fi
 }
 
 # -----------------------------------------------------------------------------------------------------------
@@ -547,8 +550,11 @@ function PLASMA_DE() {
   dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed plasma kde-applications gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
+  sudo pacman -S --noconfirm --needed plasma gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
   sudo systemctl enable sddm
+  if [ ${PLASMA_EXTRA} = "yes" ]; then
+  sudo pacman -S kde-applications
+  fi
 }
 
 # -----------------------------------------------------------------------------------------------------------
@@ -654,6 +660,22 @@ if [ ${EXFONTS} = "yes" ]; then
 fi
 
 if [ ${DESKTOPENV} = "gnome" ]; then
+  clear
+  echo "################################################################################"
+  echo "### Do You Want To Install Gnome Extras?                                     ###"
+  echo "### 1)  Yes                                                                  ###"
+  echo "### 2)  No                                                                   ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    GNOME_EXTRA="yes"
+    ;;
+    2)
+    GNOME_EXTRA="no"
+    ;;
+  esac
   GNOME_DE
 fi
 
@@ -686,6 +708,22 @@ if [ ${DESKTOPENV} = "xfce" ]; then
 fi
 
 if [ ${DESKTOPENV} = "plasma" ]; then
+  clear
+  echo "################################################################################"
+  echo "### Do You Want To Install KDE Plasma Extras?                                ###"
+  echo "### 1)  Yes                                                                  ###"
+  echo "### 2)  No                                                                   ###"
+  echo "################################################################################"
+  read case;
+
+  case $case in
+    1)
+    PLASMA_EXTRA="yes"
+    ;;
+    2)
+    PLASMA_EXTRA="no"
+    ;;
+  esac
   PLASMA_DE
 fi
 

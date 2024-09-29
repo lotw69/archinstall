@@ -209,6 +209,22 @@ function DEWM() {
   case $case in
     01)
     DESKTOPENV="gnome"
+    clear
+    echo "################################################################################"
+    echo "### Do You Want To Install Gnome Extras?                                     ###"
+    echo "### 1)  Yes                                                                  ###"
+    echo "### 2)  No                                                                   ###"
+    echo "################################################################################"
+    read case;
+
+    case $case in
+      1)
+      GNOME_EXTRA="yes"
+      ;;
+      2)
+      GNOME_EXTRA="no"
+      ;;
+    esac
     ;;
     02)
     DESKTOPENV="cinnamon"
@@ -676,22 +692,6 @@ if [ ${EXFONTS} = "yes" ]; then
 fi
 
 if [ ${DESKTOPENV} = "gnome" ]; then
-  clear
-  echo "################################################################################"
-  echo "### Do You Want To Install Gnome Extras?                                     ###"
-  echo "### 1)  Yes                                                                  ###"
-  echo "### 2)  No                                                                   ###"
-  echo "################################################################################"
-  read case;
-
-  case $case in
-    1)
-    GNOME_EXTRA="yes"
-    ;;
-    2)
-    GNOME_EXTRA="no"
-    ;;
-  esac
   GNOME_DE
 fi
 

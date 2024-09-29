@@ -233,6 +233,22 @@ function DEWM() {
     ;;
     09)
     DESKTOPENV="plasma"
+    clear
+    echo "################################################################################"
+    echo "### Do You Want To Install KDE Plasma Extras?                                ###"
+    echo "### 1)  Yes                                                                  ###"
+    echo "### 2)  No                                                                   ###"
+    echo "################################################################################"
+    read case;
+
+    case $case in
+      1)
+      PLASMA_EXTRA="yes"
+      ;;
+      2)
+      PLASMA_EXTRA="no"
+      ;;
+    esac
     ;;
     10)
     DESKTOPENV="i3"
@@ -708,22 +724,6 @@ if [ ${DESKTOPENV} = "xfce" ]; then
 fi
 
 if [ ${DESKTOPENV} = "plasma" ]; then
-  clear
-  echo "################################################################################"
-  echo "### Do You Want To Install KDE Plasma Extras?                                ###"
-  echo "### 1)  Yes                                                                  ###"
-  echo "### 2)  No                                                                   ###"
-  echo "################################################################################"
-  read case;
-
-  case $case in
-    1)
-    PLASMA_EXTRA="yes"
-    ;;
-    2)
-    PLASMA_EXTRA="no"
-    ;;
-  esac
   PLASMA_DE
 fi
 

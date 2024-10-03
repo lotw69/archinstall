@@ -479,8 +479,8 @@ function GNOME_DE() {
   dialog --infobox "Installing The Gnome Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed gnome nautilus-share gnome-browser-connector
-  $ZB -S --noconfirm --needed extension-manager adw-gtk3
+  sudo pacman -S --noconfirm --needed gnome nautilus-share gnome-browser-connector adw-gtk-theme
+  $ZB -S --noconfirm --needed extension-manager
   gsettings set org.gnome.mutter check-alive-timeout 60000
   sudo systemctl enable gdm
   if [ ${GNONE_EXTRA} = "yes" ]; then

@@ -358,6 +358,10 @@ function BASHRC_CONF() {
   echo "alias info-full='clear && fastfetch -c all'" >> ~/.bashrc
   echo "alias sdh='sudo shutdown -h '" >> ~/.bashrc
   echo "alias sdr='sudo shutdown -r '" >> ~/.bashrc
+  echo "alias kconf='nano ~/.config/kitty/kitty.conf'" >> ~/.bashrc
+  echo "alias 7zx='clear && 7z x -o~/Downloads'" >> ~/.bashrc
+  echo "alias 7zm='clear && 7z a -m9 -r'" >> ~/.bashrc
+  echo "alias lsl='lsd -l'" >> ~/.bashrc
   echo "alias compress='clear&&sudo btrfs filesystem defragment -c -r -v '" >> ~/.bashrc
   if [ ${ZB} = "yay" ]; then
     echo "alias ar-up='clear&&yay --noconfirm -Syu'" >> ~/.bashrc
@@ -632,7 +636,7 @@ function HYPRLAND_DE(){
   dialog --infobox "Installing The Hyprland Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed hyprland hypridle hyprlock xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk dunst thunar thunar-archive-plugin rofi-wayland archlinux-xdg-menu galculator ddcutil nwg-dock-hyprland
+  sudo pacman -S --noconfirm --needed hyprland hypridle hyprlock xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk dunst thunar thunar-archive-plugin rofi-wayland archlinux-xdg-menu galculator ddcutil nwg-dock-hyprland network-manager-applet
   $ZB -S --noconfirm --needed mugshot qt5ct-kde qt6ct-kde swww waypaper sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git hyprshot vdu_controls
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf

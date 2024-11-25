@@ -487,7 +487,7 @@ function GNOME_DE() {
   $ZB -S --noconfirm --needed extension-manager
   gsettings set org.gnome.mutter check-alive-timeout 60000
   sudo systemctl enable gdm
-  if [ ${GNONE_EXTRA} = "yes" ]; then
+  if [ ${GNOME_EXTRA} = "yes" ]; then
   sudo pacman -S --noconfirm --needed gnome-extra
   fi
 }

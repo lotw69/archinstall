@@ -488,7 +488,7 @@ function GNOME_DE() {
   gsettings set org.gnome.mutter check-alive-timeout 60000
   sudo systemctl enable gdm
   if [ ${GNONE_EXTRA} = "yes" ]; then
-  sudo pacman -S gnome-extra
+  sudo pacman -S --noconfirm --needed gnome-extra
   fi
 }
 
@@ -589,7 +589,7 @@ function PLASMA_DE() {
   sudo pacman -S --noconfirm --needed plasma gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
   sudo systemctl enable sddm
   if [ ${PLASMA_EXTRA} = "yes" ]; then
-  sudo pacman -S kde-applications
+  sudo pacman -S --needed --noconfirm kde-applications
   fi
 }
 

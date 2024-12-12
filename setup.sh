@@ -528,7 +528,7 @@ function MATE_DE() {
   dialog --infobox "Installing The MATE Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed mate mate-extra gnome-disk-utility variety onboard ark file-roller unrar p7zip lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings
+  sudo pacman -S --noconfirm --needed mate mate-extra gnome-disk-utility variety onboard ark file-roller unrar p7zip lightdm lightdm-gtk-greeter lightdm-webkit2-greeter lightdm-gtk-greeter-settings gvfs-smb
   $ZB -S --noconfirm --needed mate-tweak brisk-menu mate-screensaver-hacks mugshot
   sudo systemctl enable lightdm
 }
@@ -586,7 +586,7 @@ function PLASMA_DE() {
   dialog --infobox "Installing The KDE Plasma Desktop Environment." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed plasma gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm
+  sudo pacman -S --noconfirm --needed plasma gnome-disk-utility redshift plasma-wayland-protocols plasma-pass sddm dolphin konsole
   sudo systemctl enable sddm
   if [ ${PLASMA_EXTRA} = "yes" ]; then
   sudo pacman -S --needed --noconfirm kde-applications

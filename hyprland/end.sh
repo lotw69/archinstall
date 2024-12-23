@@ -1,0 +1,1 @@
+killall nwg-dock-hyprland

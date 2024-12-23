@@ -642,6 +642,9 @@ function HYPRLAND_DE(){
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   cp hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf
   cp hyprland/hypridle.conf ~/.config/hypr/hypridle.conf
+  cp hyprland/end.sh ~/.config/hypr/end.sh
+  cp hyprland/walp.sh ~/.config/hypr/walp.sh
+  chmod +x ~/.config/hypr/*.sh
   mkdir -p ~/.config/kitty
   cp kitty/kitty.conf ~/.config/kitty/kitty.conf
   mkdir -p ~/.config/waybar

@@ -2,7 +2,7 @@
 
 while true; do
 	wallpaper="$(find -L "/home/erik/Pictures/Wallpapers" -type f | shuf -n 1)"
-	echo "ipc = off
+	echo "ipc = off"
 
 	preload = $wallpaper
 

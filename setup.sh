@@ -636,8 +636,8 @@ function HYPRLAND_DE(){
   dialog --infobox "Installing The Hyprland Window Manager." 3 40
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed hyprland hypridle hyprlock xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk dunst thunar thunar-archive-plugin rofi-wayland archlinux-xdg-menu galculator ddcutil nwg-dock-hyprland network-manager-applet hyprpaper
-  $ZB -S --noconfirm --needed mugshot qt5ct-kde qt6ct-kde sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git hyprshot vdu_controls hyprland-qtutils
+  sudo pacman -S --noconfirm --needed hyprland hypridle hyprlock xdg-desktop-portal-hyprland kitty dolphin gnome-disk-utility polkit sddm waybar breeze breeze-gtk breeze-icons kate nwg-look gwenview cool-retro-term pavucontrol okular grim polkit-gnome noto-fonts-emoji xdg-desktop-portal-gtk dunst thunar thunar-archive-plugin rofi-wayland archlinux-xdg-menu galculator ddcutil nwg-dock-hyprland network-manager-applet hyprpaper qt5ct qt6ct swww
+  $ZB -S --noconfirm --needed mugshot sddm-conf-git waybar-module-pacman-updates-git wlogout wttrbar rofi-themes-collection-git hyprshot vdu_controls hyprland-qtutils waypaper
   mkdir -p ~/.config/hypr
   cp hyprland/hyprland.conf ~/.config/hypr/hyprland.conf
   cp hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf

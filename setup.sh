@@ -291,7 +291,7 @@ function NEEDED_SOFTWARE() {
   dialog --infobox "Installing needed CLI based software." 3 38
   sleep 2
   clear
-  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper bwm-ng p7zip unrar
+  sudo pacman -S --noconfirm --needed base-devel nano git neofetch wget rsync glances bashtop bpytop bat reflector lsd gtop ncdu duf btop inxi fastfetch htop gtop podman podman-docker podman-compose distrobox firefox hunspell hunspell-en_us man flatpak archlinux-wallpaper bwm-ng p7zip unrar cyme
   $ZB -S --noconfirm --needed cpufetch pfetch pacseek
   sudo pacman -S --noconfirm --needed xdg-user-dirs
   xdg-user-dirs-update
@@ -363,6 +363,7 @@ function BASHRC_CONF() {
   echo "alias 7zm='clear && 7z a -m9 -r'" >> ~/.bashrc
   echo "alias lsl='lsd -l'" >> ~/.bashrc
   echo "alias compress='clear&&sudo btrfs filesystem defragment -c -r -v '" >> ~/.bashrc
+  echo "alias usb='cyme -y'" >> ~/.bashrc
   if [ ${ZB} = "yay" ]; then
     echo "alias ar-up='clear&&yay --noconfirm -Syu'" >> ~/.bashrc
   fi
